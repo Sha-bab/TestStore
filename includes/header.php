@@ -28,8 +28,8 @@ $metaDesc    = $metaDesc  ?? $siteTagline;
     <!-- Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/custom.css">
+    <!-- Custom CSS (cache-busted) -->
+    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/custom.css?v=<?= filemtime(__DIR__ . '/../assets/css/custom.css') ?>">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= SITE_URL ?>/assets/images/favicon.svg">

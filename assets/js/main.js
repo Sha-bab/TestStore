@@ -158,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navbar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
-                navbar.style.background = 'rgba(10,14,26,0.98)';
+                navbar.style.background = 'rgba(240, 247, 242, 0.98)';
             } else {
-                navbar.style.background = 'rgba(10,14,26,0.92)';
+                navbar.style.background = 'rgba(240, 247, 242, 0.94)';
             }
         }, { passive: true });
     }

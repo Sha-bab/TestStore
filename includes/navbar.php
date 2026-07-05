@@ -20,7 +20,7 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
     top: calc(100% + 8px);
     right: 0;
     min-width: 190px;
-    background: #151c2e;
+    background: #e2efe6;
     border: 1px solid var(--ts-border);
     border-radius: var(--ts-radius);
     box-shadow: 0 12px 40px rgba(0,0,0,0.6);

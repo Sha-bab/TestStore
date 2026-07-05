@@ -37,12 +37,6 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
                     <li><a href="<?= SITE_URL ?>/auth/register.php?role=developer">Register as Developer</a></li>
                     <li><a href="<?= SITE_URL ?>/developer/publish.php">Publish Your App</a></li>
                     <li><a href="<?= SITE_URL ?>/developer/dashboard.php">Developer Dashboard</a></li>
-                </ul>
-                <div class="ts-badge-row mt-3">
-                    <span class="ts-tech-badge">PHP 8+</span>
-                    <span class="ts-tech-badge">MySQL</span>
-                    <span class="ts-tech-badge">MDBootstrap</span>
-                </div>
             </div>
         </div>
 
@@ -51,9 +45,6 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
         <div class="d-flex flex-wrap justify-content-between align-items-center py-3 gap-2">
             <p class="ts-footer-copy mb-0">
                 &copy; <?= date('Y') ?> <?= htmlspecialchars($siteName) ?>. All rights reserved.
-            </p>
-            <p class="ts-footer-copy mb-0">
-                Built using PHP + MySQL
             </p>
               <p class="ts-footer-copy mb-0">
                 Developed By Muhammad Shabab Sayem
@@ -68,8 +59,8 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 
-<!-- Custom JS -->
-<script src="<?= SITE_URL ?>/assets/js/main.js"></script>
+<!-- Custom JS (cache-busted) -->
+<script src="<?= SITE_URL ?>/assets/js/main.js?v=<?= filemtime(__DIR__ . '/../assets/js/main.js') ?>"></script>
 
 <?php if (isset($extraJS)) echo $extraJS; ?>
 </body>
