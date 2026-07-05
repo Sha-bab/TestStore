@@ -1090,13 +1090,19 @@ option { background: #151c2e; color: var(--ts-text-primary); }
     --ts-topbar-h:  56px;
 }
 
+/* Body override for admin pages — no navbar, full viewport */
+body:has(.ts-admin-layout) {
+    display: block;
+    overflow-x: hidden;
+}
+
 /* Full-page wrapper — must fill viewport */
 .ts-admin-layout {
     display: flex;
     min-height: 100vh;
     width: 100%;
-    flex: 1;           /* fills body's column flex */
     align-items: stretch;
+    position: relative;
 }
 
 /* ── Sidebar ── */

@@ -14,28 +14,19 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
                 <p class="ts-footer-desc">The premier destination for Android APK downloads. Safe, fast, and developer-friendly.</p>
                 <div class="ts-social-links d-flex gap-2 mt-3">
                     <a href="#" class="ts-social-btn" aria-label="Twitter"><span class="material-icons">public</span></a>
+                    <a href="#" class="ts-social-btn" aria-label="Instagram"><span class="material-icons">photo</span></a>
                     <a href="#" class="ts-social-btn" aria-label="GitHub"><span class="material-icons">code</span></a>
                 </div>
             </div>
 
             <!-- Quick Links -->
-            <div class="col-6 col-lg-2 offset-lg-1">
+            <div class="col-6 col-lg-4 offset-lg-1">
                 <h6 class="ts-footer-heading">Platform</h6>
                 <ul class="ts-footer-links list-unstyled">
                     <li><a href="<?= SITE_URL ?>/index.php">Home</a></li>
                     <li><a href="<?= SITE_URL ?>/search.php">Browse Apps</a></li>
                     <li><a href="<?= SITE_URL ?>/auth/register.php">Create Account</a></li>
                     <li><a href="<?= SITE_URL ?>/auth/login.php">Sign In</a></li>
-                </ul>
-            </div>
-
-            <!-- Categories -->
-            <div class="col-6 col-lg-2">
-                <h6 class="ts-footer-heading">Categories</h6>
-                <ul class="ts-footer-links list-unstyled">
-                    <?php foreach (['Games','Tools','Social','Education','Productivity'] as $footerCat): ?>
-                    <li><a href="<?= SITE_URL ?>/category.php?cat=<?= urlencode($footerCat) ?>"><?= $footerCat ?></a></li>
-                    <?php endforeach; ?>
                 </ul>
             </div>
 
@@ -63,6 +54,9 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
             </p>
             <p class="ts-footer-copy mb-0">
                 Built using PHP + MySQL
+            </p>
+              <p class="ts-footer-copy mb-0">
+                Developed By Muhammad Shabab Sayem
             </p>
         </div>
     </div>
