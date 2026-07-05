@@ -1,0 +1,13 @@
+# Deny direct access to APK files — only download.php streams them
+<FilesMatch "\.apk$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent PHP execution in storage directories
+<FilesMatch "\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+Options -Indexes

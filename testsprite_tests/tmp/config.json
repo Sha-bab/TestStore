@@ -1,0 +1,19 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:80/Test%20Store/index.php",
+  "loginUser": "teststore",
+  "loginPassword": "test123",
+  "executionArgs": {
+    "projectName": "Test Store",
+    "projectPath": "c:/xampp/htdocs/Test Store",
+    "testIds": [],
+    "additionalInstruction": "The site runs on XAMPP at http://localhost/Test%20Store. Admin credentials: email=admin@teststore.com password=admin123. The site uses PHP sessions and CSRF tokens. Test all major flows: home page browsing, search, app details, user registration, user login, developer login, developer dashboard, admin login, admin dashboard, app approval. Focus on finding UI bugs, broken links, JS errors, and layout issues.",
+    "serverMode": "production",
+    "envs": {
+      "API_KEY": "sk-user-R6bQOCA2FEOeWZuGAe8FK1iyO_SiOnarQiq7s2jLU88r4KVmydf9CVMxgTJYtJ5Ylk7Lx7x-F7o9caQJcVT1UMC-SK5FC2XBztHRdVjnqZVFGRdGskFH48TylwkIRlVCuXQ"
+    }
+  },
+  "serverPort": 52343
+}

@@ -1,0 +1,1886 @@
+[
+  {
+    "id": "TC001",
+    "title": "Approve a pending app submission",
+    "description": "An admin can approve a pending app and see it marked as approved afterward.",
+    "category": "Admin App Approvals",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/app-approval.php"
+      },
+      {
+        "type": "action",
+        "description": "Open a pending app submission"
+      },
+      {
+        "type": "action",
+        "description": "Approve the app"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app is marked as approved"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Login as admin",
+    "description": "An admin can sign in and reach the admin dashboard.",
+    "category": "Admin Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the admin lands on the admin dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Publish a new app submission",
+    "description": "A developer can submit a new APK listing with the required app details.",
+    "category": "Developer App Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/developer/publish.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required app details"
+      },
+      {
+        "type": "action",
+        "description": "Submit the publish form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new submission appears in the developer app list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Publish a new app for review",
+    "description": "A developer can submit a complete new app listing and see it appear as pending review.",
+    "category": "Developer App Publishing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the app publishing page"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a new app name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a new package name"
+      },
+      {
+        "type": "action",
+        "description": "Select a valid category"
+      },
+      {
+        "type": "action",
+        "description": "Select a pricing type"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a version number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the app description"
+      },
+      {
+        "type": "action",
+        "description": "Fill in keywords"
+      },
+      {
+        "type": "action",
+        "description": "Fill in release notes"
+      },
+      {
+        "type": "action",
+        "description": "Fill in technical details"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid APK file"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid app icon file"
+      },
+      {
+        "type": "action",
+        "description": "Upload valid screenshot files"
+      },
+      {
+        "type": "action",
+        "description": "Submit the app for review"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new submission is shown with a pending review status"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the submitted app appears in the developer's app management area"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Register as a regular user",
+    "description": "A visitor can create a regular user account and reach the correct post-registration destination.",
+    "category": "User Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/register.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the user registration path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique username into the username field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the same password into the password confirmation field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the account is created and the user lands on the correct destination"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Discover an app from the home page",
+    "description": "This test verifies that a visitor can browse the home page app grids and open an app detail page from an app card.",
+    "category": "App Discovery Home",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/index.php"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the app grids"
+      },
+      {
+        "type": "action",
+        "description": "Click an app card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app detail page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify app details are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "View app details and start the APK download",
+    "description": "A visitor can open an app detail page, review the main app information, and start the APK download from the same page.",
+    "category": "App Detail Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app’s main details are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the download action for the app"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the APK download flow is initiated"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Register as a developer",
+    "description": "A visitor can create a developer account with the required profile details and reach the developer destination.",
+    "category": "User Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/register.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the developer registration path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique username into the username field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the same password into the password confirmation field"
+      },
+      {
+        "type": "action",
+        "description": "Select a developer type"
+      },
+      {
+        "type": "action",
+        "description": "Select a country"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a mobile number into the mobile number field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the account is created and the developer lands on the developer destination"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Download an APK from the app detail page",
+    "description": "A visitor can start an APK download from the app detail page and receive the download action successfully.",
+    "category": "APK Download",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Click the download action for the app"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the APK download flow is initiated"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app remains accessible after starting the download"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Reject a pending app with a reason",
+    "description": "An admin can reject a pending app after entering a rejection reason and see it marked as rejected.",
+    "category": "Admin App Approvals",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/app-approval.php"
+      },
+      {
+        "type": "action",
+        "description": "Open a pending app submission"
+      },
+      {
+        "type": "action",
+        "description": "Enter a rejection reason"
+      },
+      {
+        "type": "action",
+        "description": "Reject the app"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app is marked as rejected"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Register a developer and sign in",
+    "description": "A newly registered developer can log in and reach the developer dashboard.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/register.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the developer registration path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique username into the username field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the same password into the password confirmation field"
+      },
+      {
+        "type": "action",
+        "description": "Select a developer type"
+      },
+      {
+        "type": "action",
+        "description": "Select a country"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a mobile number into the mobile number field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the developer login path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the registered email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the developer lands on the developer dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Block a developer account",
+    "description": "An admin can block a developer account and see its status change to blocked.",
+    "category": "Admin Developer Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/developers.php"
+      },
+      {
+        "type": "action",
+        "description": "Select a developer account"
+      },
+      {
+        "type": "action",
+        "description": "Block the account"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the developer status is blocked"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Register a user and sign in",
+    "description": "A newly registered regular user can log in and reach the home page.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/register.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the user registration path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique username into the username field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a unique email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the same password into the password confirmation field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the user login path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the registered email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the home page"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Review pending app details before approval",
+    "description": "An admin can open a pending submission and inspect its details, screenshots, and technical information before moderating it.",
+    "category": "Admin App Approvals",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/app-approval.php"
+      },
+      {
+        "type": "action",
+        "description": "Open a pending app submission"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app submission details are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify screenshots and technical information are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Browse apps by keyword, filter, and sort",
+    "description": "This test verifies that a user can search the catalog, refine results with category and sort controls, and see the updated list.",
+    "category": "App Search & Filter",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/search.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search field with a valid keyword"
+      },
+      {
+        "type": "action",
+        "description": "Select a category filter"
+      },
+      {
+        "type": "action",
+        "description": "Select a sort option"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify filtered search results are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching apps are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Delete a developer account",
+    "description": "An admin can delete a developer account and see it removed from the list.",
+    "category": "Admin Developer Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/developers.php"
+      },
+      {
+        "type": "action",
+        "description": "Select a developer account"
+      },
+      {
+        "type": "action",
+        "description": "Delete the account"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the developer is removed from the list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Submit a logged-in app review",
+    "description": "A signed-in user can rate an app, write a review, and see the new feedback appear on the app page.",
+    "category": "App Reviews",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Open the review form"
+      },
+      {
+        "type": "action",
+        "description": "Select a star rating"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the review title and review text"
+      },
+      {
+        "type": "action",
+        "description": "Submit the review"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new review is displayed on the app page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the review is associated with the signed-in user"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Update app details and save changes",
+    "description": "A developer can change an app's metadata and save the updated information.",
+    "category": "Developer App Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/developer/edit-app.php"
+      },
+      {
+        "type": "action",
+        "description": "Update the app metadata"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the revised app information is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Search for apps from the home page",
+    "description": "This test verifies that a visitor can search from the home page and see matching app results.",
+    "category": "App Discovery Home",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/index.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search field with a valid keyword"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify search results are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching apps are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Unblock a blocked developer account",
+    "description": "An admin can unblock a previously blocked developer and see the status return to active.",
+    "category": "Admin Developer Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/developers.php"
+      },
+      {
+        "type": "action",
+        "description": "Select a blocked developer account"
+      },
+      {
+        "type": "action",
+        "description": "Unblock the account"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the developer status is active"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Search and filter developer apps",
+    "description": "A developer can review owned apps and narrow the list by status before opening an app for editing.",
+    "category": "Developer App Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/developer/my-apps.php"
+      },
+      {
+        "type": "action",
+        "description": "Select an app status filter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the filtered developer app list is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Open an app for editing"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app editing page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "Toggle registration availability",
+    "description": "An admin can disable or enable user registration from site settings and save the change.",
+    "category": "Admin Site Settings",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open site settings"
+      },
+      {
+        "type": "action",
+        "description": "Change the registration availability setting"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the registration availability setting is saved"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC023",
+    "title": "Open a category from the home page",
+    "description": "This test verifies that a visitor can use a category shortcut on the home page and see apps filtered to that category.",
+    "category": "App Discovery Home",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/index.php"
+      },
+      {
+        "type": "action",
+        "description": "Click a category shortcut"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category results page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify apps for the selected category are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC024",
+    "title": "Review developer dashboard summary and recent activity",
+    "description": "A developer can see account-level totals, recent activity, and access management pages from the dashboard.",
+    "category": "Developer Dashboard and Profile Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the developer dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify app totals and download totals are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify recent activity is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC025",
+    "title": "Browse apps in a selected category",
+    "description": "This test verifies that a visitor can open a category page, review the category list, and open an app detail page from that category.",
+    "category": "Category Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/category.php"
+      },
+      {
+        "type": "action",
+        "description": "Select a category"
+      },
+      {
+        "type": "action",
+        "description": "Click an app card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app detail page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify app details are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC026",
+    "title": "Search and filter developers",
+    "description": "An admin can search developers and combine filters to find matching accounts.",
+    "category": "Admin Developer Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/developers.php"
+      },
+      {
+        "type": "action",
+        "description": "Search for a developer by name or email"
+      },
+      {
+        "type": "action",
+        "description": "Apply a developer filter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the matching developer list is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC027",
+    "title": "View free apps and open a result",
+    "description": "This test verifies that a user can filter the catalog to free apps, review the updated results, and open an app detail page.",
+    "category": "App Search & Filter",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/search.php"
+      },
+      {
+        "type": "action",
+        "description": "Select the free apps filter"
+      },
+      {
+        "type": "action",
+        "description": "Click an app card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app detail page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify app details are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC028",
+    "title": "Read reviews and open the full reviews page",
+    "description": "A visitor can read app reviews on the detail page and continue to the full reviews list for more feedback.",
+    "category": "App Detail Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the reviews section"
+      },
+      {
+        "type": "action",
+        "description": "Open the full reviews page for the app"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify app reviews are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the full reviews page shows more review entries"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC029",
+    "title": "Read paginated reviews for an app",
+    "description": "A visitor can open the full reviews page for an app and move through additional review pages.",
+    "category": "App Reviews",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/review.php"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the review pagination controls"
+      },
+      {
+        "type": "action",
+        "description": "Go to the next page of reviews"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify reviews are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a different set of reviews is shown on the next page"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC030",
+    "title": "View paid apps across multiple result pages",
+    "description": "This test verifies that a user can filter for paid apps, change the category filter, and navigate to another page of results.",
+    "category": "App Search & Filter",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/search.php"
+      },
+      {
+        "type": "action",
+        "description": "Select the paid apps filter"
+      },
+      {
+        "type": "action",
+        "description": "Select a category filter"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the next page of results"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify additional matching apps are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify pagination is available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC031",
+    "title": "Update the site name",
+    "description": "An admin can change the public site name and see the new value saved in settings.",
+    "category": "Admin Site Settings",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open site settings"
+      },
+      {
+        "type": "action",
+        "description": "Update the site name setting"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated site name setting is saved"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC032",
+    "title": "Upload supported app assets successfully",
+    "description": "A developer can attach a valid APK, icon, and screenshots while preparing a publish submission.",
+    "category": "Developer App Publishing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the app publishing page"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the app name with a unique value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the package name with a unique value"
+      },
+      {
+        "type": "action",
+        "description": "Select a valid category"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid APK file"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid app icon file"
+      },
+      {
+        "type": "action",
+        "description": "Upload valid screenshot files"
+      },
+      {
+        "type": "action",
+        "description": "Submit the publish form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the submission is accepted for moderation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the uploaded assets are included in the submitted app listing"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC033",
+    "title": "Browse screenshots and version information",
+    "description": "A visitor can view an app’s screenshots and switch to its version and release information from the detail page.",
+    "category": "App Detail Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the screenshots and version information area"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify screenshots are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify version history or release notes are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC034",
+    "title": "View developer analytics charts and app stats",
+    "description": "A developer can review download trends, rating distribution, and per-app performance insights.",
+    "category": "Developer Analytics",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the analytics page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the daily downloads chart is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the per-app performance table is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC035",
+    "title": "Keep multiple setting changes together",
+    "description": "An admin can update more than one site setting in a single save and the changes persist together.",
+    "category": "Admin Site Settings",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open site settings"
+      },
+      {
+        "type": "action",
+        "description": "Update the site name setting"
+      },
+      {
+        "type": "action",
+        "description": "Change the registration availability setting"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify both updated site settings are saved"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC036",
+    "title": "Update developer profile details",
+    "description": "A developer can change profile information and save the updated account details.",
+    "category": "Developer Dashboard and Profile Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the profile page"
+      },
+      {
+        "type": "action",
+        "description": "Update the profile information with new valid values"
+      },
+      {
+        "type": "action",
+        "description": "Save the profile changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated profile details are shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the profile update confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC037",
+    "title": "View developer profile updates",
+    "description": "A developer can update profile information and later see the saved profile details reflected in the account area.",
+    "category": "Developer App Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/developer/profile.php"
+      },
+      {
+        "type": "action",
+        "description": "Update the profile details"
+      },
+      {
+        "type": "action",
+        "description": "Save the profile changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated profile information is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC038",
+    "title": "Change sorting within a category",
+    "description": "This test verifies that a visitor can change the sort order on a category page and see the category list update accordingly.",
+    "category": "Category Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/category.php"
+      },
+      {
+        "type": "action",
+        "description": "Select a category"
+      },
+      {
+        "type": "action",
+        "description": "Select a sort option"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category app list is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app ordering updates"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC039",
+    "title": "Read the full app description sections",
+    "description": "A visitor can switch between the app’s description, version history, and release notes to review the full listing details.",
+    "category": "App Detail Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Open the version history section"
+      },
+      {
+        "type": "action",
+        "description": "Open the release notes section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app’s detailed content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the currently selected section changes as expected"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC040",
+    "title": "Change developer password successfully",
+    "description": "A developer can update the account password from the profile page and continue using the account afterward.",
+    "category": "Developer Dashboard and Profile Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the profile page"
+      },
+      {
+        "type": "action",
+        "description": "Change the account password to a new valid value"
+      },
+      {
+        "type": "action",
+        "description": "Save the password change"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a password update confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the profile page remains accessible after saving"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC041",
+    "title": "Open a similar app from the detail page",
+    "description": "A visitor can use a similar app suggestion to reach another app detail page.",
+    "category": "App Detail Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Click a similar app suggestion"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify another app detail page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new app’s main details are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC042",
+    "title": "See validation errors for incomplete app submission",
+    "description": "A developer sees validation feedback when required publish fields are missing or incomplete.",
+    "category": "Developer App Publishing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the app publishing page"
+      },
+      {
+        "type": "action",
+        "description": "Submit the publish form without completing the required fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation errors are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app is not submitted for review"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC043",
+    "title": "Restore settings after editing them",
+    "description": "An admin can change a setting and then update it again so the latest value is the one retained.",
+    "category": "Admin Site Settings",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open site settings"
+      },
+      {
+        "type": "action",
+        "description": "Update the site name setting"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "action",
+        "description": "Update the site name setting again"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the latest site name setting is saved"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC044",
+    "title": "Compare developer app performance across metrics",
+    "description": "A developer can inspect multiple app entries and recent activity trends on the analytics page.",
+    "category": "Developer Analytics",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the developer login credentials with {{LOGIN_USER}} and {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the analytics page"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the app breakdown section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify multiple apps are listed in the per-app breakdown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify recent activity trends are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC045",
+    "title": "Show login error for invalid credentials",
+    "description": "A visitor sees an authentication error when submitting invalid login credentials.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the user login path"
+      },
+      {
+        "type": "action",
+        "description": "Fill in an email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill in an incorrect password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an authentication error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC046",
+    "title": "View a review form only when signed in",
+    "description": "A visitor who is not signed in can open an app page but cannot submit a review without first logging in.",
+    "category": "App Reviews",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/app.php"
+      },
+      {
+        "type": "action",
+        "description": "Open the review form"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit a review without signing in"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify review submission is not available"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a login requirement is shown or the form is disabled"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC047",
+    "title": "Prevent saving an invalid settings value",
+    "description": "An admin sees validation feedback when a site setting is left invalid and the change is not saved.",
+    "category": "Admin Site Settings",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/admin/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open site settings"
+      },
+      {
+        "type": "action",
+        "description": "Clear a required setting value"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the invalid setting is not saved"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC048",
+    "title": "Show registration validation errors",
+    "description": "A visitor sees registration validation errors when required details are incomplete or invalid.",
+    "category": "User Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Test%20Store/auth/register.php"
+      },
+      {
+        "type": "action",
+        "description": "Choose the user registration path"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form without filling required fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify registration validation errors are visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]
