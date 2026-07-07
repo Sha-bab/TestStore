@@ -44,10 +44,10 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
 
         <div class="d-flex flex-wrap justify-content-between align-items-center py-3 gap-2">
             <p class="ts-footer-copy mb-0">
-                &copy; <?= date('Y') ?> <?= htmlspecialchars($siteName) ?>. All rights reserved.
+                &copy; <?= date('Y') ?> <?= htmlspecialchars($siteName) ?>. <b>All rights reserved.</b>
             </p>
               <p class="ts-footer-copy mb-0">
-                Developed By Muhammad Shabab Sayem
+                Developed By <del>Muhammad Shabab Sayem</del>
             </p>
         </div>
     </div>
