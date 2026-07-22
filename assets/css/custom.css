@@ -8,43 +8,45 @@
 /* ── CSS Custom Properties ─────────────────────────────────── */
 :root {
     /* Colors — Light Sage Green */
-    --ts-bg-primary:    #f0f7f2;
-    --ts-bg-secondary:  #e2efe6;
-    --ts-bg-card:       rgba(255, 255, 255, 0.85);
+    --ts-bg-primary: #f0f7f2;
+    --ts-bg-secondary: #e2efe6;
+    --ts-bg-card: rgba(255, 255, 255, 0.85);
     --ts-bg-card-hover: rgba(255, 255, 255, 0.98);
-    --ts-bg-glass:      rgba(255, 255, 255, 0.55);
-    --ts-border:        rgba(16, 185, 129, 0.15);
+    --ts-bg-glass: rgba(255, 255, 255, 0.55);
+    --ts-border: rgba(16, 185, 129, 0.15);
     --ts-border-accent: rgba(16, 185, 129, 0.45);
 
     /* Brand — Emerald Green + Teal */
-    --ts-primary:       #059669;   /* Deeper Emerald */
-    --ts-primary-dark:  #047857;
-    --ts-primary-glow:  rgba(5, 150, 105, 0.18);
-    --ts-accent:        #0d9488;   /* Teal */
-    --ts-accent-dark:   #0f766e;
-    --ts-success:       #16a34a;
-    --ts-warning:       #d97706;
-    --ts-danger:        #dc2626;
-    --ts-info:          #0284c7;
+    --ts-primary: #059669;
+    /* Deeper Emerald */
+    --ts-primary-dark: #047857;
+    --ts-primary-glow: rgba(5, 150, 105, 0.18);
+    --ts-accent: #0d9488;
+    /* Teal */
+    --ts-accent-dark: #0f766e;
+    --ts-success: #16a34a;
+    --ts-warning: #d97706;
+    --ts-danger: #dc2626;
+    --ts-info: #0284c7;
 
     /* Text — dark for light backgrounds */
-    --ts-text-primary:  #0f2a1e;
-    --ts-text-secondary:#1a5c3a;
-    --ts-text-muted:    #6b9e7a;
+    --ts-text-primary: #0f2a1e;
+    --ts-text-secondary: #1a5c3a;
+    --ts-text-muted: #6b9e7a;
 
     /* Sizing */
-    --ts-navbar-h:      68px;
-    --ts-radius:        14px;
-    --ts-radius-sm:     8px;
-    --ts-radius-lg:     20px;
+    --ts-navbar-h: 68px;
+    --ts-radius: 14px;
+    --ts-radius-sm: 8px;
+    --ts-radius-lg: 20px;
 
     /* Shadows */
-    --ts-shadow-card:   0 4px 24px rgba(0, 80, 40, 0.1);
-    --ts-shadow-glow:   0 0 30px rgba(5, 150, 105, 0.15);
+    --ts-shadow-card: 0 4px 24px rgba(0, 80, 40, 0.1);
+    --ts-shadow-glow: 0 0 30px rgba(5, 150, 105, 0.15);
 
     /* Transitions */
     --ts-ease: cubic-bezier(0.4, 0, 0.2, 1);
-    --ts-dur:  0.25s;
+    --ts-dur: 0.25s;
 }
 
 /* ── Reset & Base ──────────────────────────────────────────── */
@@ -168,6 +170,22 @@ img {
 
     100% {
         background-position: 200% 0;
+    }
+}
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+
+    66% {
+        transform: translateY(-6px) rotate(-1deg);
     }
 }
 
@@ -744,7 +762,7 @@ img {
 
 /* ── Hero Banner ─────────────────────────────────────────────── */
 .ts-hero {
-    background: linear-gradient(135deg, #ddf0e4 0%, #f0f7f2 50%, #ddf0e4 100%);
+    background: linear-gradient(135deg, #0a4a2e 0%, #0d5c38 40%, #0b5235 70%, #083d27 100%);
     position: relative;
     overflow: hidden;
     padding: 80px 0 60px;
@@ -755,8 +773,9 @@ img {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 60% 60% at 20% 50%, rgba(5, 150, 105, 0.10) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 50%, rgba(13, 148, 136, 0.07) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 60% at 20% 50%, rgba(16, 185, 129, 0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 50%, rgba(13, 148, 136, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 50% at 50% 0%, rgba(5, 150, 105, 0.12) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -764,21 +783,22 @@ img {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.15;
-    background: linear-gradient(135deg, #0f2a1e 30%, var(--ts-primary), var(--ts-accent));
+    background: linear-gradient(135deg, #ffffff 20%, #a7f3d0, #6ee7b7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: none;
 }
 
 .ts-hero-sub {
     font-size: 1.1rem;
-    color: var(--ts-text-secondary);
+    color: rgba(167, 243, 208, 0.85);
     max-width: 520px;
 }
 
 .ts-hero-search-wrap {
-    background: var(--ts-bg-glass);
-    border: 1px solid var(--ts-border);
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(110, 231, 183, 0.35);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -790,8 +810,8 @@ img {
 }
 
 .ts-hero-search-wrap:focus-within {
-    border-color: var(--ts-primary);
-    box-shadow: 0 0 0 4px var(--ts-primary-glow);
+    border-color: #6ee7b7;
+    box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.15);
 }
 
 .ts-hero-search {
@@ -799,18 +819,18 @@ img {
     background: none;
     border: none;
     outline: none;
-    color: var(--ts-text-primary);
+    color: #fff;
     font-family: inherit;
     font-size: 1rem;
     padding: 6px 0;
 }
 
 .ts-hero-search::placeholder {
-    color: var(--ts-text-muted);
+    color: rgba(167, 243, 208, 0.6);
 }
 
 .ts-hero-search-btn {
-    background: linear-gradient(135deg, var(--ts-primary), var(--ts-primary-dark));
+    background: linear-gradient(135deg, #059669, #0d9488);
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -820,10 +840,13 @@ img {
     font-size: 0.9rem;
     cursor: pointer;
     transition: all var(--ts-dur) var(--ts-ease);
+    box-shadow: 0 2px 12px rgba(5, 150, 105, 0.45);
 }
 
 .ts-hero-search-btn:hover {
     opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(5, 150, 105, 0.6);
 }
 
 .ts-hero-stats {
@@ -840,7 +863,7 @@ img {
 .ts-hero-stat-num {
     font-size: 1.6rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--ts-primary), var(--ts-accent));
+    background: linear-gradient(135deg, #6ee7b7, #34d399);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -848,7 +871,7 @@ img {
 
 .ts-hero-stat-label {
     font-size: 0.78rem;
-    color: var(--ts-text-muted);
+    color: rgba(167, 243, 208, 0.7);
     font-weight: 500;
 }
 
@@ -1457,113 +1480,6 @@ option {
 }
 
 /* ── Admin Sidebar ──────────────────────────────────────────── */
-.ts-admin-layout {
-    display: flex;
-    min-height: 100vh;
-}
-
-.ts-sidebar {
-    width: 250px;
-    background: var(--ts-bg-secondary);
-    border-right: 1px solid var(--ts-border);
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 100;
-}
-
-.ts-sidebar-brand {
-    padding: 16px 20px 24px;
-    border-bottom: 1px solid var(--ts-border);
-    margin-bottom: 12px;
-}
-
-.ts-sidebar-nav {
-    flex: 1;
-    padding: 0 12px;
-}
-
-.ts-sidebar-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: var(--ts-radius-sm);
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--ts-text-secondary);
-    text-decoration: none;
-    transition: all var(--ts-dur) var(--ts-ease);
-    margin-bottom: 2px;
-}
-
-.ts-sidebar-link:hover,
-.ts-sidebar-link.active {
-    background: var(--ts-bg-glass);
-    color: var(--ts-text-primary);
-}
-
-.ts-sidebar-link.active {
-    border-left: 3px solid var(--ts-primary);
-    color: var(--ts-primary);
-}
-
-.ts-sidebar-link .material-icons {
-    font-size: 1.1rem;
-}
-
-.ts-sidebar-section {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--ts-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 16px 12px 6px;
-    margin-top: 8px;
-}
-
-.ts-main-content {
-    margin-left: 250px;
-    flex: 1;
-    min-height: 100vh;
-    background: var(--ts-bg-primary);
-}
-
-.ts-content-area {
-    padding: 30px;
-}
-
-@media (max-width: 992px) {
-    .ts-sidebar {
-        transform: translateX(-100%);
-        transition: transform var(--ts-dur) var(--ts-ease);
-    }
-
-    .ts-sidebar.open {
-        transform: translateX(0);
-    }
-
-    .ts-main-content {
-        margin-left: 0;
-    }
-}
-
-.ts-admin-topbar {
-    background: var(--ts-bg-secondary);
-    border-bottom: 1px solid var(--ts-border);
-    padding: 16px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-}
 
 /* ── Chart containers ────────────────────────────────────────── */
 .ts-chart-wrap {

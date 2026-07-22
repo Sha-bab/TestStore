@@ -66,7 +66,7 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
     <div class="container-xl">
         <!-- Brand -->
         <a class="navbar-brand ts-brand" href="<?= SITE_URL ?>/index.php">
-            <span class="ts-brand-icon material-icons">android</span>
+            <img src="<?= SITE_URL ?>/assets/images/logo.svg" alt="Test Store Logo" width="34" height="34" style="display:inline-block;vertical-align:middle;margin-right:4px;filter:drop-shadow(0 0 6px rgba(16,185,129,0.4))">
             <span class="ts-brand-text"><?= htmlspecialchars($siteName) ?></span>
         </a>
 

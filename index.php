@@ -104,8 +104,9 @@ include __DIR__ . '/includes/alerts.php';
             </div>
             <div class="col-lg-5 d-none d-lg-flex justify-content-center fade-in-up" style="animation-delay:.2s">
                 <div style="position:relative;text-align:center">
-                    <div style="width:300px;height:300px;background:radial-gradient(circle,rgba(99,102,241,0.15),transparent 70%);border-radius:50%;display:flex;align-items:center;justify-content:center">
-                        <span class="material-icons" style="font-size:9rem;background:linear-gradient(135deg,var(--ts-primary),var(--ts-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">android</span>
+                    <div style="width:300px;height:300px;background:radial-gradient(circle,rgba(16,185,129,0.20),rgba(13,148,136,0.10) 50%,transparent 75%);border-radius:50%;display:flex;align-items:center;justify-content:center">
+                        <img src="<?= SITE_URL ?>/assets/images/logo.svg" alt="Test Store"
+                             style="width:160px;height:160px;filter:drop-shadow(0 0 30px rgba(16,185,129,0.55)) drop-shadow(0 0 60px rgba(13,148,136,0.3));animation:heroFloat 4s ease-in-out infinite">
                     </div>
                 </div>
             </div>

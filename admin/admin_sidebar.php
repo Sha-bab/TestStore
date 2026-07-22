@@ -8,7 +8,7 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
 <aside class="ts-sidebar">
     <div class="ts-sidebar-brand">
         <a href="<?= SITE_URL ?>/admin/dashboard.php" class="ts-brand text-decoration-none d-flex align-items-center gap-2">
-            <span class="material-icons ts-brand-icon">android</span>
+            <img src="<?= SITE_URL ?>/assets/images/logo.svg" alt="Logo" width="32" height="32" style="filter:drop-shadow(0 0 5px rgba(16,185,129,0.35))">
             <div>
                 <div class="ts-brand-text" style="font-size:1rem"><?= htmlspecialchars($siteName) ?></div>
                 <div style="font-size:.65rem;color:var(--ts-text-muted);margin-top:-2px">Administration</div>

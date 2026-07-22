@@ -13,7 +13,7 @@ $metaDesc    = $metaDesc  ?? $siteTagline;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= htmlspecialchars($metaDesc) ?>">
     <meta name="robots" content="index, follow">
-    <title><?= htmlspecialchars($pageTitle) ?> — <?= htmlspecialchars($siteName) ?></title>
+    <title><?= htmlspecialchars($pageTitle) ?> - <?= htmlspecialchars($siteName) ?></title>
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,6 @@ $metaDesc    = $metaDesc  ?? $siteTagline;
     <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/custom.css?v=<?= filemtime(__DIR__ . '/../assets/css/custom.css') ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="<?= SITE_URL ?>/assets/images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="<?= SITE_URL ?>/assets/images/favicon.svg?v=<?= filemtime(__DIR__ . '/../assets/images/favicon.svg') ?>">
 </head>
 <body>
