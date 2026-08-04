@@ -100,9 +100,9 @@ include __DIR__ . '/includes/navbar.php';
     <div class="container-xl">
         <div class="ts-breadcrumb">
             <a href="<?= SITE_URL ?>/index.php">Home</a>
-            <span class="ts-breadcrumb-sep material-icons" style="font-size:.9rem">chevron_right</span>
+            <i class="ri-arrow-right-s-line ts-breadcrumb-sep" style="font-size:.9rem"></i>
             <a href="<?= SITE_URL ?>/category.php?cat=<?= urlencode($app['category']) ?>"><?= htmlspecialchars($app['category']) ?></a>
-            <span class="ts-breadcrumb-sep material-icons" style="font-size:.9rem">chevron_right</span>
+            <i class="ri-arrow-right-s-line ts-breadcrumb-sep" style="font-size:.9rem"></i>
             <span><?= htmlspecialchars($app['app_name']) ?></span>
         </div>
     </div>
@@ -140,7 +140,7 @@ include __DIR__ . '/includes/navbar.php';
                         <div class="d-flex gap-4 flex-wrap mb-3">
                             <div class="text-center">
                                 <div class="ts-stars mb-1" style="justify-content:center">
-                                    <?php $r = round((float)$app['avg_rating']); for($i=1;$i<=5;$i++) echo '<span class="material-icons ts-star '.($i<=$r?'filled':'').'">' . ($i<=$r?'star':'star_border') . '</span>'; ?>
+                                    <?php $r = round((float)$app['avg_rating']); for($i=1;$i<=5;$i++) echo '<i class="ri-star' . ($i<=$r?'-fill':'-line') . ' ts-star ' . ($i<=$r?'filled':'') . '"></i>'; ?>
                                 </div>
                                 <div style="font-size:.78rem;color:var(--ts-text-muted)"><?= number_format((float)$app['avg_rating'],1) ?> (<?= number_format($app['total_reviews']) ?> reviews)</div>
                             </div>
@@ -162,7 +162,7 @@ include __DIR__ . '/includes/navbar.php';
                         </div>
 
                         <a href="<?= SITE_URL ?>/download.php?id=<?= $id ?>" class="ts-btn-accent">
-                            <span class="material-icons me-2">download</span>
+                            <i class="ri-download-cloud-2-fill me-2"></i>
                             Download APK — <?= formatBytes((int)$app['apk_size']) ?>
                         </a>
                     </div>
@@ -172,7 +172,7 @@ include __DIR__ . '/includes/navbar.php';
             <!-- Screenshots -->
             <?php if (!empty($screenshots)): ?>
             <div class="ts-panel mb-4 fade-in-up" style="animation-delay:.1s">
-                <h2 class="ts-section-title mb-3"><span class="material-icons ts-section-icon">photo_library</span> Screenshots</h2>
+                <h2 class="ts-section-title mb-3"><i class="ri-image-2-fill ts-section-icon"></i> Screenshots</h2>
                 <div class="row g-2">
                     <?php foreach ($screenshots as $ss): ?>
                     <div class="col-6 col-md-4">
@@ -245,7 +245,7 @@ include __DIR__ . '/includes/navbar.php';
             <!-- Reviews Section -->
             <div class="ts-panel mb-4 fade-in-up" style="animation-delay:.2s">
                 <h2 class="ts-section-title mb-4">
-                    <span class="material-icons ts-section-icon">rate_review</span>
+                    <i class="ri-star-smile-fill ts-section-icon"></i>
                     Reviews &amp; Ratings
                 </h2>
 
@@ -263,12 +263,12 @@ include __DIR__ . '/includes/navbar.php';
                             <label class="ts-label">Your Rating</label>
                             <div class="ts-star-input-wrap d-flex gap-1 mb-1" style="font-size:1.8rem" id="starPicker">
                                 <?php for ($i = 1; $i <= 5; $i++): ?>
-                                <span class="material-icons ts-star-pick"
+                                <i class="ri-star-line ts-star-pick"
                                       data-value="<?= $i ?>"
                                       style="cursor:pointer;color:var(--ts-text-muted);transition:color .15s"
                                       onclick="setRating(<?= $i ?>)"
                                       onmouseenter="previewRating(<?= $i ?>)"
-                                      onmouseleave="resetPreview()">star_border</span>
+                                      onmouseleave="resetPreview()"></i>
                                 <?php endfor; ?>
                                 <input type="hidden" name="rating" id="ratingInput" value="0">
                             </div>
@@ -287,7 +287,7 @@ include __DIR__ . '/includes/navbar.php';
                     let selectedRating = 0;
                     function renderStars(val, selector) {
                         document.querySelectorAll('#starPicker .ts-star-pick').forEach((s, i) => {
-                            s.textContent = i < val ? 'star' : 'star_border';
+                            s.className = (i < val ? 'ri-star-fill' : 'ri-star-line') + ' ts-star-pick';
                             s.style.color  = i < val ? 'var(--ts-warning)' : 'var(--ts-text-muted)';
                         });
                     }
@@ -318,7 +318,7 @@ include __DIR__ . '/includes/navbar.php';
                 <!-- Review list -->
                 <?php if (empty($reviews)): ?>
                 <div class="ts-empty" style="padding:30px">
-                    <span class="material-icons ts-empty-icon">chat_bubble_outline</span>
+                    <i class="ri-chat-3-line ts-empty-icon"></i>
                     <div class="ts-empty-title">No reviews yet</div>
                     <p>Be the first to review this app!</p>
                 </div>
@@ -331,7 +331,7 @@ include __DIR__ . '/includes/navbar.php';
                         <div>
                             <div style="font-weight:600;font-size:.9rem"><?= htmlspecialchars($rev['username']) ?></div>
                             <div class="ts-stars">
-                                <?php for ($i=1;$i<=5;$i++) echo '<span class="material-icons ts-star ' . ($i<=$rev['rating']?'filled':'') . '" style="font-size:.85rem">' . ($i<=$rev['rating']?'star':'star_border') . '</span>'; ?>
+                                <?php for ($i=1;$i<=5;$i++) echo '<i class="' . ($i<=$rev['rating']?'ri-star-fill':'ri-star-line') . ' ts-star ' . ($i<=$rev['rating']?'filled':'') . '" style="font-size:.85rem"></i>'; ?>
                                 <span style="font-size:.75rem;color:var(--ts-text-muted);margin-left:4px"><?= date('M d, Y', strtotime($rev['created_at'])) ?></span>
                             </div>
                         </div>
@@ -371,13 +371,13 @@ include __DIR__ . '/includes/navbar.php';
                 <?php if ($app['privacy_policy_url']): ?>
                 <a href="<?= htmlspecialchars($app['privacy_policy_url']) ?>" target="_blank" rel="noopener"
                    class="d-flex align-items-center gap-1 mt-3" style="font-size:.82rem;color:var(--ts-accent)">
-                    <span class="material-icons" style="font-size:.9rem">policy</span> Privacy Policy
+                    <i class="ri-shield-check-fill" style="font-size:.9rem"></i> Privacy Policy
                 </a>
                 <?php endif; ?>
                 <?php if ($app['promo_video_url']): ?>
                 <a href="<?= htmlspecialchars($app['promo_video_url']) ?>" target="_blank" rel="noopener"
                    class="d-flex align-items-center gap-1 mt-2" style="font-size:.82rem;color:var(--ts-accent)">
-                    <span class="material-icons" style="font-size:.9rem">play_circle</span> Promo Video
+                    <i class="ri-play-circle-fill" style="font-size:.9rem"></i> Promo Video
                 </a>
                 <?php endif; ?>
             </div>
@@ -392,7 +392,7 @@ include __DIR__ . '/includes/navbar.php';
                         <div style="font-weight:700"><?= htmlspecialchars($app['dev_name']) ?></div>
                         <?php if ($app['dev_country']): ?>
                         <div style="font-size:.8rem;color:var(--ts-text-muted)">
-                            <span class="material-icons" style="font-size:.85rem">location_on</span>
+                            <i class="ri-map-pin-2-fill" style="font-size:.85rem"></i>
                             <?= htmlspecialchars($app['dev_country']) ?>
                         </div>
                         <?php endif; ?>
@@ -409,7 +409,7 @@ include __DIR__ . '/includes/navbar.php';
             <?php if (!empty($similar)): ?>
             <div class="fade-in-up" style="animation-delay:.15s">
                 <h3 class="ts-section-title mb-3">
-                    <span class="material-icons ts-section-icon">apps</span>
+                    <i class="ri-layout-masonry-fill ts-section-icon"></i>
                     Similar Apps
                 </h3>
                 <?php foreach ($similar as $sa): ?>
@@ -420,7 +420,7 @@ include __DIR__ . '/includes/navbar.php';
                     <div style="flex:1;min-width:0">
                         <div style="font-size:.88rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><?= htmlspecialchars($sa['app_name']) ?></div>
                         <div class="ts-stars">
-                            <?php $sr=round((float)$sa['avg_rating']); for($i=1;$i<=5;$i++) echo '<span class="material-icons ts-star ' . ($i<=$sr?'filled':'') . '" style="font-size:.75rem">' . ($i<=$sr?'star':'star_border') . '</span>'; ?>
+                            <?php $sr=round((float)$sa['avg_rating']); for($i=1;$i<=5;$i++) echo '<i class="' . ($i<=$sr?'ri-star-fill':'ri-star-line') . ' ts-star ' . ($i<=$sr?'filled':'') . '" style="font-size:.75rem"></i>'; ?>
                         </div>
                     </div>
                 </a>

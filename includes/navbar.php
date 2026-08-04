@@ -74,14 +74,14 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
         <button class="navbar-toggler ts-toggler" type="button"
                 data-mdb-toggle="collapse" data-mdb-collapse-init
                 data-mdb-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
-            <span class="material-icons">menu</span>
+            <i class="ri-menu-4-line" style="font-size:1.4rem"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNav">
             <!-- Center Search -->
             <form class="ts-search-form d-flex mx-auto" action="<?= SITE_URL ?>/search.php" method="GET">
                 <div class="ts-search-wrap">
-                    <span class="material-icons ts-search-icon">search</span>
+                    <i class="ri-search-2-line ts-search-icon"></i>
                     <input class="ts-search-input" type="search" name="q"
                            placeholder="Search apps, games, tools…"
                            value="<?= htmlspecialchars($_GET['q'] ?? '') ?>"
@@ -95,7 +95,7 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                 <li class="nav-item">
                     <a class="nav-link ts-nav-link <?= $currentPage === 'index.php' ? 'active' : '' ?>"
                        href="<?= SITE_URL ?>/index.php">
-                        <span class="material-icons me-1" style="font-size:1rem">home</span>Home
+                        <i class="ri-home-4-fill me-1" style="font-size:1rem"></i>Home
                     </a>
                 </li>
 
@@ -103,9 +103,9 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                 <li class="nav-item ts-dd-wrap" id="ddWrapCat">
                     <a class="nav-link ts-nav-link ts-dd-toggle" href="#"
                        onclick="tsToggleDd('ddWrapCat'); return false;">
-                        <span class="material-icons me-1" style="font-size:1rem">apps</span>
+                        <i class="ri-apps-2-fill me-1" style="font-size:1rem"></i>
                         Categories
-                        <span class="ts-caret material-icons" style="font-size:.85rem">expand_more</span>
+                        <i class="ri-arrow-down-s-fill ts-caret" style="font-size:.85rem"></i>
                     </a>
                     <ul class="ts-dd-menu ts-dd-left">
                         <?php foreach (['Games','Tools','Social','Entertainment','Education','Productivity','Finance','Health','Photography','Music'] as $navCat): ?>
@@ -131,11 +131,11 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                         <img src="<?= navAvatarUrl($cu['avatar'], false) ?>"
                              class="ts-avatar-sm" alt="avatar">
                         <span><?= htmlspecialchars($cu['username']) ?></span>
-                        <span class="ts-caret material-icons" style="font-size:.85rem">expand_more</span>
+                        <i class="ri-arrow-down-s-fill ts-caret" style="font-size:.85rem"></i>
                     </a>
                     <ul class="ts-dd-menu">
                         <li><a href="<?= SITE_URL ?>/auth/logout.php">
-                            <span class="material-icons" style="font-size:1rem">logout</span>Sign Out
+                            <i class="ri-logout-box-r-line" style="font-size:1rem"></i>Sign Out
                         </a></li>
                     </ul>
                 </li>
@@ -143,12 +143,12 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                 <?php elseif (isDeveloper()): ?>
                 <li class="nav-item">
                     <a class="nav-link ts-nav-link" href="<?= SITE_URL ?>/developer/dashboard.php">
-                        <span class="material-icons me-1" style="font-size:1rem">dashboard</span>Dashboard
+                        <i class="ri-dashboard-2-fill me-1" style="font-size:1rem"></i>Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="ts-btn-primary ms-1" href="<?= SITE_URL ?>/developer/publish.php">
-                        <span class="material-icons me-1" style="font-size:.9rem">upload</span>Publish App
+                        <i class="ri-upload-cloud-2-fill me-1" style="font-size:.9rem"></i>Publish App
                     </a>
                 </li>
                 <li class="nav-item ts-dd-wrap ms-2" id="ddWrapDev">
@@ -156,21 +156,21 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                        href="#" onclick="tsToggleDd('ddWrapDev'); return false;">
                         <img src="<?= navAvatarUrl($cu['avatar'], true) ?>"
                              class="ts-avatar-sm" alt="avatar">
-                        <span class="ts-caret material-icons" style="font-size:.85rem">expand_more</span>
+                        <i class="ri-arrow-down-s-fill ts-caret" style="font-size:.85rem"></i>
                     </a>
                     <ul class="ts-dd-menu">
                         <li><a href="<?= SITE_URL ?>/developer/my-apps.php">
-                            <span class="material-icons" style="font-size:1rem">view_list</span>My Apps
+                            <i class="ri-apps-line" style="font-size:1rem"></i>My Apps
                         </a></li>
                         <li><a href="<?= SITE_URL ?>/developer/analytics.php">
-                            <span class="material-icons" style="font-size:1rem">bar_chart</span>Analytics
+                            <i class="ri-bar-chart-2-fill" style="font-size:1rem"></i>Analytics
                         </a></li>
                         <li><a href="<?= SITE_URL ?>/developer/profile.php">
-                            <span class="material-icons" style="font-size:1rem">manage_accounts</span>Profile
+                            <i class="ri-user-settings-fill" style="font-size:1rem"></i>Profile
                         </a></li>
                         <li><div class="ts-dd-divider"></div></li>
                         <li><a href="<?= SITE_URL ?>/auth/logout.php" class="ts-dd-danger">
-                            <span class="material-icons" style="font-size:1rem">logout</span>Sign Out
+                            <i class="ri-logout-box-r-line" style="font-size:1rem"></i>Sign Out
                         </a></li>
                     </ul>
                 </li>
@@ -178,7 +178,7 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                 <?php elseif (isAdmin()): ?>
                 <li class="nav-item">
                     <a class="nav-link ts-nav-link" href="<?= SITE_URL ?>/admin/dashboard.php">
-                        <span class="material-icons me-1" style="font-size:1rem">admin_panel_settings</span>Admin Panel
+                        <i class="ri-shield-star-fill me-1" style="font-size:1rem"></i>Admin Panel
                     </a>
                 </li>
                 <li class="nav-item ms-2">

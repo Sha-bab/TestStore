@@ -40,11 +40,11 @@ $stmt->execute([$cat]);
 $apps = $stmt->fetchAll();
 
 $catIcons = [
-    'Games'=>'sports_esports','Tools'=>'build','Social'=>'people',
-    'Entertainment'=>'movie','Education'=>'school','Productivity'=>'work',
-    'Finance'=>'attach_money','Health'=>'favorite','Photography'=>'camera_alt','Music'=>'music_note',
+    'Games'=>'ri-gamepad-fill','Tools'=>'ri-tools-fill','Social'=>'ri-group-fill',
+    'Entertainment'=>'ri-film-fill','Education'=>'ri-book-open-fill','Productivity'=>'ri-lightning-fill',
+    'Finance'=>'ri-coins-fill','Health'=>'ri-heart-pulse-fill','Photography'=>'ri-camera-fill','Music'=>'ri-music-2-fill',
 ];
-$catIcon = $catIcons[$cat] ?? 'apps';
+$catIcon = $catIcons[$cat] ?? 'ri-apps-2-fill';
 
 $pageTitle = $cat . ' Apps';
 $metaDesc  = "Browse the best $cat Android apps on TEST STORE";
@@ -57,13 +57,13 @@ include __DIR__ . '/includes/navbar.php';
     <div class="container-xl">
         <div class="d-flex align-items-center gap-3">
             <div class="ts-stat-icon ts-stat-icon-primary" style="width:56px;height:56px;font-size:1.7rem">
-                <span class="material-icons"><?= $catIcon ?></span>
+                <i class="<?= $catIcon ?>" style="font-size:1.7rem"></i>
             </div>
             <div>
                 <h1 class="ts-page-title"><?= htmlspecialchars($cat) ?></h1>
                 <div class="ts-breadcrumb">
                     <a href="<?= SITE_URL ?>/index.php">Home</a>
-                    <span class="ts-breadcrumb-sep material-icons" style="font-size:.9rem">chevron_right</span>
+                    <i class="ri-arrow-right-s-line ts-breadcrumb-sep" style="font-size:.9rem"></i>
                     <span><?= htmlspecialchars($cat) ?></span>
                     <span class="ts-breadcrumb-sep">·</span>
                     <span><?= number_format($total) ?> app<?= $total!==1?'s':'' ?></span>
@@ -94,7 +94,7 @@ include __DIR__ . '/includes/navbar.php';
 
     <?php if (empty($apps)): ?>
     <div class="ts-empty ts-panel">
-        <span class="material-icons ts-empty-icon"><?= $catIcon ?></span>
+        <i class="<?= $catIcon ?> ts-empty-icon"></i>
         <div class="ts-empty-title">No <?= htmlspecialchars($cat) ?> apps yet</div>
         <p>Be the first to publish in this category!</p>
         <a href="<?= SITE_URL ?>/developer/publish.php" class="ts-btn-primary mt-2">Publish App</a>
@@ -109,7 +109,7 @@ include __DIR__ . '/includes/navbar.php';
     <div class="ts-pagination">
         <?php if ($page > 1): ?>
         <a href="?cat=<?= urlencode($cat) ?>&sort=<?= $sort ?>&page=<?= $page-1 ?>" class="ts-page-btn">
-            <span class="material-icons" style="font-size:1rem">chevron_left</span>
+            <i class="ri-arrow-left-s-line" style="font-size:1rem"></i>
         </a>
         <?php endif; ?>
         <?php for ($i = max(1,$page-2); $i <= min($pages,$page+2); $i++): ?>
@@ -118,7 +118,7 @@ include __DIR__ . '/includes/navbar.php';
         <?php endfor; ?>
         <?php if ($page < $pages): ?>
         <a href="?cat=<?= urlencode($cat) ?>&sort=<?= $sort ?>&page=<?= $page+1 ?>" class="ts-page-btn">
-            <span class="material-icons" style="font-size:1rem">chevron_right</span>
+            <i class="ri-arrow-right-s-line" style="font-size:1rem"></i>
         </a>
         <?php endif; ?>
     </div>

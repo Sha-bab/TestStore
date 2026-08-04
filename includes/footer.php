@@ -8,14 +8,14 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
             <!-- Brand column -->
             <div class="col-lg-4">
                 <a class="ts-brand d-inline-flex align-items-center gap-2 mb-3 text-decoration-none" href="<?= SITE_URL ?>/index.php">
-                    <span class="material-icons ts-brand-icon">android</span>
+                    <i class="ri-store-2-fill ts-brand-icon"></i>
                     <span class="ts-brand-text"><?= htmlspecialchars($siteName) ?></span>
                 </a>
                 <p class="ts-footer-desc">The premier destination for Android APK downloads. Safe, fast, and developer-friendly.</p>
                 <div class="ts-social-links d-flex gap-2 mt-3">
-                    <a href="#" class="ts-social-btn" aria-label="Twitter"><span class="material-icons">public</span></a>
-                    <a href="#" class="ts-social-btn" aria-label="Instagram"><span class="material-icons">photo</span></a>
-                    <a href="#" class="ts-social-btn" aria-label="GitHub"><span class="material-icons">code</span></a>
+                    <a href="#" class="ts-social-btn" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+                    <a href="#" class="ts-social-btn" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="#" class="ts-social-btn" aria-label="GitHub"><i class="ri-github-fill"></i></a>
                 </div>
             </div>
 
@@ -37,6 +37,7 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
                     <li><a href="<?= SITE_URL ?>/auth/register.php?role=developer">Register as Developer</a></li>
                     <li><a href="<?= SITE_URL ?>/developer/publish.php">Publish Your App</a></li>
                     <li><a href="<?= SITE_URL ?>/developer/dashboard.php">Developer Dashboard</a></li>
+                </ul>
             </div>
         </div>
 
@@ -47,7 +48,7 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
                 &copy; <?= date('Y') ?> <?= htmlspecialchars($siteName) ?>. <b>All rights reserved.</b>
             </p>
               <p class="ts-footer-copy mb-0">
-                Developed By <del>Muhammad Shabab Sayem</del>
+                Developed By Muhammad Shabab Sayem
             </p>
         </div>
     </div>

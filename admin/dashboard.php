@@ -68,7 +68,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
         <div>
             <h1 class="ts-page-title" style="font-size:1.5rem">Platform Dashboard</h1>
-            <p class="text-secondary-ts mb-0" style="font-size:.85rem">Welcome, <?= htmlspecialchars($_SESSION['username'] ?? '') ?>!</p>
+            <p style="color:var(--ts-text-secondary);margin-bottom:0;font-size:.85rem">Welcome, <?= htmlspecialchars($_SESSION['username'] ?? '') ?>!</p>
         </div>
         <?php if ($stats['pending'] > 0): ?>
         <a href="<?= SITE_URL ?>/admin/app-approval.php" class="ts-btn-primary" style="border-radius:8px">

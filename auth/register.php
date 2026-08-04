@@ -90,7 +90,7 @@ $countries = ['Afghanistan','Albania','Algeria','Argentina','Australia','Austria
     <div class="ts-auth-card" style="max-width:520px">
         <div class="ts-auth-logo">
             <a href="<?= SITE_URL ?>/index.php" class="ts-brand d-inline-flex align-items-center gap-2">
-                <span class="material-icons ts-brand-icon">android</span>
+                <i class="ri-store-2-fill ts-brand-icon"></i>
                 <span class="ts-brand-text"><?= SITE_NAME ?></span>
             </a>
         </div>

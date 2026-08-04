@@ -67,7 +67,7 @@ $metaDesc  = 'Sign in to TEST STORE';
     <div class="ts-auth-card">
         <div class="ts-auth-logo">
             <a href="<?= SITE_URL ?>/index.php" class="ts-brand d-inline-flex align-items-center gap-2">
-                <span class="material-icons ts-brand-icon">android</span>
+                <i class="ri-store-2-fill ts-brand-icon"></i>
                 <span class="ts-brand-text"><?= SITE_NAME ?></span>
             </a>
         </div>
@@ -82,7 +82,7 @@ $metaDesc  = 'Sign in to TEST STORE';
 
         <?php if ($error): ?>
         <div class="ts-alert ts-alert-danger mb-3 fade-in">
-            <span class="material-icons">error</span> <?= htmlspecialchars($error) ?>
+            <i class="ri-error-warning-fill"></i> <?= htmlspecialchars($error) ?>
         </div>
         <?php endif; ?>
         <?php $flash = getFlash(); if ($flash): ?>
@@ -105,12 +105,12 @@ $metaDesc  = 'Sign in to TEST STORE';
                     <input type="password" id="password" name="password" class="ts-input"
                            placeholder="••••••••" required style="padding-right:44px">
                     <button type="button" onclick="togglePass()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ts-text-muted);cursor:pointer;padding:0">
-                        <span class="material-icons" id="passEye">visibility</span>
+                        <i class="ri-eye-line" id="passEye"></i>
                     </button>
                 </div>
             </div>
             <button type="submit" class="ts-btn-primary w-100 mt-2" style="border-radius:8px;justify-content:center;padding:13px">
-                <span class="material-icons me-2">login</span> Sign In
+                <i class="ri-login-circle-fill me-2"></i> Sign In
             </button>
         </form>
 
@@ -134,8 +134,13 @@ function switchTab(event, tab) {
 function togglePass() {
     const input = document.getElementById('password');
     const eye   = document.getElementById('passEye');
-    if (input.type === 'password') { input.type = 'text'; eye.textContent = 'visibility_off'; }
-    else { input.type = 'password'; eye.textContent = 'visibility'; }
+    if (input.type === 'password') {
+        input.type = 'text';
+        eye.classList.replace('ri-eye-line', 'ri-eye-off-line');
+    } else {
+        input.type = 'password';
+        eye.classList.replace('ri-eye-off-line', 'ri-eye-line');
+    }
 }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>

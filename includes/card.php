@@ -32,15 +32,13 @@ function renderAppCard(array $app, bool $showDev = false): void {
             <div class="ts-card-meta d-flex align-items-center gap-2 flex-wrap">
                 <div class="ts-stars" title="<?= $rating ?> stars">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                    <span class="material-icons ts-star <?= $i <= round((float)$rating) ? 'filled' : '' ?>">
-                        <?= $i <= round((float)$rating) ? 'star' : 'star_border' ?>
-                    </span>
+                    <i class="<?= $i <= round((float)$rating) ? 'ri-star-fill' : 'ri-star-line' ?> ts-star <?= $i <= round((float)$rating) ? 'filled' : '' ?>"></i>
                     <?php endfor; ?>
                     <span class="ts-rating-num"><?= $rating ?></span>
                 </div>
                 <span class="ts-meta-sep">·</span>
                 <span class="ts-dl-count">
-                    <span class="material-icons" style="font-size:.85rem">download</span>
+                    <i class="ri-download-2-fill" style="font-size:.85rem"></i>
                     <?= $downloads ?>
                 </span>
             </div>

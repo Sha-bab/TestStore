@@ -61,7 +61,7 @@ include __DIR__ . '/includes/navbar.php';
     <?php foreach ($reviews as $rev): ?>
     <div class="ts-glass p-3 mb-3" style="border-radius:var(--ts-radius)">
         <div class="d-flex align-items-center gap-3 mb-2">
-            <img src="<?= $rev['avatar'] ? UPLOAD_URL . $rev['avatar'] : SITE_URL . '/assets/images/default-avatar.svg' ?>" class="ts-avatar-sm" style="width:38px;height:38px">
+            <img src="<?= $rev['avatar'] ? UPLOAD_URL . 'avatars/' . $rev['avatar'] : SITE_URL . '/assets/images/default-avatar.svg' ?>" class="ts-avatar-sm" style="width:38px;height:38px">
             <div>
                 <div style="font-weight:600"><?= htmlspecialchars($rev['username']) ?></div>
                 <div class="ts-stars"><?php for($i=1;$i<=5;$i++) echo '<span class="material-icons ts-star '.($i<=$rev['rating']?'filled':'').'" style="font-size:.85rem">'.($i<=$rev['rating']?'star':'star_border').'</span>'; ?> <span style="font-size:.75rem;color:var(--ts-text-muted);margin-left:4px"><?= date('M d, Y', strtotime($rev['created_at'])) ?></span></div>

@@ -18,31 +18,31 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
     <nav class="ts-sidebar-nav">
         <div class="ts-sidebar-section">Overview</div>
         <a href="<?= SITE_URL ?>/admin/dashboard.php" class="ts-sidebar-link <?= $activeMenu==='dashboard'?'active':'' ?>">
-            <span class="material-icons">dashboard</span>Dashboard
+            <i class="ri-dashboard-3-fill"></i>Dashboard
         </a>
 
         <div class="ts-sidebar-section">Content</div>
         <a href="<?= SITE_URL ?>/admin/app-approval.php" class="ts-sidebar-link <?= $activeMenu==='approvals'?'active':'' ?>">
-            <span class="material-icons">approval</span>App Approvals
+            <i class="ri-shield-check-fill"></i>App Approvals
         </a>
         <a href="<?= SITE_URL ?>/admin/apps.php" class="ts-sidebar-link <?= $activeMenu==='apps'?'active':'' ?>">
-            <span class="material-icons">apps</span>All Apps
+            <i class="ri-apps-2-fill"></i>All Apps
         </a>
 
         <div class="ts-sidebar-section">Users</div>
         <a href="<?= SITE_URL ?>/admin/developers.php" class="ts-sidebar-link <?= $activeMenu==='developers'?'active':'' ?>">
-            <span class="material-icons">code</span>Developers
+            <i class="ri-code-box-fill"></i>Developers
         </a>
 
         <div class="ts-sidebar-section">System</div>
         <a href="<?= SITE_URL ?>/admin/settings.php" class="ts-sidebar-link <?= $activeMenu==='settings'?'active':'' ?>">
-            <span class="material-icons">settings</span>Site Settings
+            <i class="ri-settings-3-fill"></i>Site Settings
         </a>
         <a href="<?= SITE_URL ?>/index.php" class="ts-sidebar-link">
-            <span class="material-icons">public</span>View Store
+            <i class="ri-global-fill"></i>View Store
         </a>
         <a href="<?= SITE_URL ?>/auth/logout.php" class="ts-sidebar-link" style="color:var(--ts-danger)!important">
-            <span class="material-icons">logout</span>Sign Out
+            <i class="ri-logout-box-r-line"></i>Sign Out
         </a>
     </nav>
 </aside>
@@ -50,7 +50,7 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
 <div class="ts-main-content">
 <div class="ts-admin-topbar">
     <button id="sidebarToggle" class="d-lg-none ts-btn-ghost" style="padding:6px 10px">
-        <span class="material-icons">menu</span>
+        <i class="ri-menu-4-line" style="font-size:1.3rem"></i>
     </button>
     <div class="d-flex align-items-center gap-3 ms-auto">
         <span style="font-size:.85rem;color:var(--ts-text-muted)">Logged in as <strong style="color:var(--ts-text-primary)"><?= htmlspecialchars($_SESSION['username'] ?? 'Admin') ?></strong></span>

@@ -45,16 +45,16 @@ $catRows = $db->query(
 )->fetchAll();
 
 $categories = [
-    'Games'         => 'sports_esports',
-    'Tools'         => 'build',
-    'Social'        => 'people',
-    'Entertainment' => 'movie',
-    'Education'     => 'school',
-    'Productivity'  => 'work',
-    'Finance'       => 'attach_money',
-    'Health'        => 'favorite',
-    'Photography'   => 'camera_alt',
-    'Music'         => 'music_note',
+    'Games'         => 'ri-gamepad-fill',
+    'Tools'         => 'ri-tools-fill',
+    'Social'        => 'ri-group-fill',
+    'Entertainment' => 'ri-film-fill',
+    'Education'     => 'ri-book-open-fill',
+    'Productivity'  => 'ri-lightning-fill',
+    'Finance'       => 'ri-coins-fill',
+    'Health'        => 'ri-heart-pulse-fill',
+    'Photography'   => 'ri-camera-fill',
+    'Music'         => 'ri-music-2-fill',
 ];
 
 include __DIR__ . '/includes/header.php';
@@ -79,7 +79,7 @@ include __DIR__ . '/includes/alerts.php';
                 <!-- Hero Search -->
                 <form action="<?= SITE_URL ?>/search.php" method="GET">
                     <div class="ts-hero-search-wrap">
-                        <span class="material-icons" style="color:var(--ts-text-muted);margin-right:4px">search</span>
+                        <i class="ri-search-2-line" style="color:var(--ts-text-muted);margin-right:6px;font-size:1.1rem"></i>
                         <input class="ts-hero-search" type="search" name="q"
                                placeholder="Search apps, games, tools…" autocomplete="off">
                         <button type="submit" class="ts-hero-search-btn">Search</button>
@@ -120,18 +120,20 @@ include __DIR__ . '/includes/alerts.php';
     <section class="mb-5 fade-in-up" style="animation-delay:.1s">
         <div class="ts-section-head">
             <h2 class="ts-section-title">
-                <span class="material-icons ts-section-icon">widgets</span>
+                <i class="ri-layout-grid-fill ts-section-icon"></i>
                 Browse Categories
             </h2>
             <a href="<?= SITE_URL ?>/search.php" class="ts-see-all">
-                All Apps <span class="material-icons" style="font-size:.9rem">chevron_right</span>
+                All Apps <i class="ri-arrow-right-s-line" style="font-size:1rem"></i>
             </a>
         </div>
         <div class="ts-cat-strip">
             <?php foreach ($categories as $name => $icon): ?>
             <a href="<?= SITE_URL ?>/category.php?cat=<?= urlencode($name) ?>" class="ts-cat-pill">
-                <span class="material-icons"><?= $icon ?></span>
-                <?= htmlspecialchars($name) ?>
+                <div class="ts-cat-pill-icon">
+                    <i class="<?= $icon ?>"></i>
+                </div>
+                <span class="ts-cat-pill-label"><?= htmlspecialchars($name) ?></span>
             </a>
             <?php endforeach; ?>
         </div>
@@ -141,16 +143,16 @@ include __DIR__ . '/includes/alerts.php';
     <section class="mb-5 fade-in-up" style="animation-delay:.15s">
         <div class="ts-section-head">
             <h2 class="ts-section-title">
-                <span class="material-icons ts-section-icon">trending_up</span>
+                <i class="ri-fire-fill ts-section-icon"></i>
                 Most Downloaded
             </h2>
             <a href="<?= SITE_URL ?>/search.php?sort=downloads" class="ts-see-all">
-                See All <span class="material-icons" style="font-size:.9rem">chevron_right</span>
+                See All <i class="ri-arrow-right-s-line" style="font-size:1rem"></i>
             </a>
         </div>
         <?php if (empty($featured)): ?>
         <div class="ts-empty">
-            <span class="material-icons ts-empty-icon">apps</span>
+            <i class="ri-apps-2-line ts-empty-icon"></i>
             <div class="ts-empty-title">No apps yet</div>
             <p>Be the first to publish an app!</p>
             <?php if (!isDeveloper() && !isAdmin()): ?>
@@ -168,16 +170,16 @@ include __DIR__ . '/includes/alerts.php';
     <section class="mb-5 fade-in-up" style="animation-delay:.2s">
         <div class="ts-section-head">
             <h2 class="ts-section-title">
-                <span class="material-icons ts-section-icon">fiber_new</span>
+                <i class="ri-sparkling-fill ts-section-icon"></i>
                 Newest Apps
             </h2>
             <a href="<?= SITE_URL ?>/search.php?sort=newest" class="ts-see-all">
-                See All <span class="material-icons" style="font-size:.9rem">chevron_right</span>
+                See All <i class="ri-arrow-right-s-line" style="font-size:1rem"></i>
             </a>
         </div>
         <?php if (empty($newest)): ?>
         <div class="ts-empty">
-            <span class="material-icons ts-empty-icon">new_releases</span>
+            <i class="ri-box-3-line ts-empty-icon"></i>
             <div class="ts-empty-title">No apps published yet</div>
         </div>
         <?php else: ?>
@@ -191,16 +193,16 @@ include __DIR__ . '/includes/alerts.php';
     <section class="mb-5 fade-in-up" style="animation-delay:.25s">
         <div class="ts-section-head">
             <h2 class="ts-section-title">
-                <span class="material-icons ts-section-icon">star</span>
+                <i class="ri-medal-fill ts-section-icon"></i>
                 Top Rated
             </h2>
             <a href="<?= SITE_URL ?>/search.php?sort=rating" class="ts-see-all">
-                See All <span class="material-icons" style="font-size:.9rem">chevron_right</span>
+                See All <i class="ri-arrow-right-s-line" style="font-size:1rem"></i>
             </a>
         </div>
         <?php if (empty($topRated)): ?>
         <div class="ts-empty">
-            <span class="material-icons ts-empty-icon">star_border</span>
+            <i class="ri-star-line ts-empty-icon"></i>
             <div class="ts-empty-title">No rated apps yet</div>
         </div>
         <?php else: ?>
@@ -214,7 +216,7 @@ include __DIR__ . '/includes/alerts.php';
     <?php if (!isDeveloper() && !isAdmin()): ?>
     <section class="fade-in-up" style="animation-delay:.3s">
         <div class="ts-glass p-4 p-md-5 text-center" style="border-radius:var(--ts-radius-lg);background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(6,182,212,0.05))">
-            <span class="material-icons" style="font-size:3.5rem;color:var(--ts-primary);margin-bottom:1rem;display:block">rocket_launch</span>
+            <i class="ri-rocket-2-fill" style="font-size:3.5rem;color:var(--ts-primary);margin-bottom:1rem;display:block"></i>
             <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:.5rem">Publish Your App</h2>
             <p style="color:var(--ts-text-secondary);max-width:480px;margin:0 auto 1.5rem">
                 Join thousands of developers distributing their Android apps on TEST STORE.
@@ -222,7 +224,7 @@ include __DIR__ . '/includes/alerts.php';
             </p>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
                 <a href="<?= SITE_URL ?>/auth/register.php?role=developer" class="ts-btn-primary" style="padding:12px 30px;font-size:1rem">
-                    <span class="material-icons me-2" style="font-size:1rem">person_add</span>
+                    <i class="ri-user-add-fill me-2" style="font-size:1rem"></i>
                     Join as Developer
                 </a>
                 <a href="<?= SITE_URL ?>/auth/login.php" class="ts-btn-ghost" style="padding:12px 28px;font-size:1rem">Sign In</a>

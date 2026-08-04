@@ -71,14 +71,14 @@ include __DIR__ . '/../includes/navbar.php';
 ?>
 <div class="ts-page-header">
     <div class="container-xl">
-        <h1 class="ts-page-title"><span class="material-icons ts-section-icon">manage_accounts</span> Edit Profile</h1>
-        <div class="ts-breadcrumb"><a href="<?= SITE_URL ?>/developer/dashboard.php">Dashboard</a> <span class="ts-breadcrumb-sep material-icons" style="font-size:.9rem">chevron_right</span> <span>Profile</span></div>
+        <h1 class="ts-page-title"><i class="ri-user-settings-fill ts-section-icon"></i> Edit Profile</h1>
+        <div class="ts-breadcrumb"><a href="<?= SITE_URL ?>/developer/dashboard.php">Dashboard</a> <span class="ts-breadcrumb-sep" style="font-size:.9rem">›</span> <span>Profile</span></div>
     </div>
 </div>
 <div class="container-xl pb-5">
     <?php include __DIR__ . '/../includes/alerts.php'; ?>
     <?php if (!empty($errors)): ?>
-    <div class="ts-alert ts-alert-danger mb-4"><span class="material-icons">error</span> <?= implode(' · ', array_map('htmlspecialchars', $errors)) ?></div>
+    <div class="ts-alert ts-alert-danger mb-4"><i class="ri-error-warning-fill me-1"></i> <?= implode(' · ', array_map('htmlspecialchars', $errors)) ?></div>
     <?php endif; ?>
 
     <div class="row g-4 justify-content-center">
@@ -99,7 +99,7 @@ include __DIR__ . '/../includes/navbar.php';
                 <input type="hidden" name="csrf_token" value="<?= csrfToken() ?>">
 
                 <div class="ts-panel mb-4">
-                    <h2 class="ts-section-title mb-4"><span class="material-icons ts-section-icon">person</span> Personal Info</h2>
+                    <h2 class="ts-section-title mb-4"><i class="ri-user-fill ts-section-icon"></i> Personal Info</h2>
                     <div class="row g-3">
                         <div class="col-md-6"><label class="ts-label">Username *</label><input type="text" name="username" class="ts-input" required value="<?= htmlspecialchars($dev['username']) ?>"></div>
                         <div class="col-md-6"><label class="ts-label">Email *</label><input type="email" name="email" class="ts-input" required value="<?= htmlspecialchars($dev['email']) ?>"></div>
@@ -123,7 +123,7 @@ include __DIR__ . '/../includes/navbar.php';
                                      style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--ts-border);flex-shrink:0">
                                 <div>
                                     <div style="font-weight:600;color:var(--ts-text-primary);font-size:.9rem">
-                                        <span class="material-icons" style="font-size:1rem;vertical-align:middle;margin-right:4px;color:var(--ts-primary)">upload</span>
+                                        <i class="ri-upload-cloud-2-fill me-1" style="color:var(--ts-primary)"></i>
                                         Click to upload photo
                                     </div>
                                     <div id="photoFileName" style="font-size:.78rem;color:var(--ts-text-muted);margin-top:2px">
@@ -135,17 +135,27 @@ include __DIR__ . '/../includes/navbar.php';
                     </div>
                 </div>
 
+                <!-- Change Password — collapsed by default -->
                 <div class="ts-panel mb-4">
-                    <h2 class="ts-section-title mb-4"><span class="material-icons ts-section-icon">lock</span> Change Password</h2>
-                    <div class="ts-alert ts-alert-info mb-3"><span class="material-icons">info</span> Leave blank to keep current password</div>
-                    <div class="row g-3">
-                        <div class="col-12"><label class="ts-label">Current Password</label><input type="password" name="current_password" class="ts-input" placeholder="Enter current password"></div>
-                        <div class="col-12"><label class="ts-label">New Password</label><input type="password" name="new_password" class="ts-input" placeholder="Min. 8 characters" minlength="8"></div>
+                    <button type="button" id="togglePwBtn"
+                            onclick="document.getElementById('pwSection').classList.toggle('d-none');this.querySelector('.ts-caret-pw').classList.toggle('ri-arrow-down-s-line');this.querySelector('.ts-caret-pw').classList.toggle('ri-arrow-up-s-line');"
+                            style="display:flex;align-items:center;gap:8px;background:none;border:none;padding:0;cursor:pointer;width:100%">
+                        <h2 class="ts-section-title mb-0" style="flex:1">
+                            <i class="ri-lock-password-fill ts-section-icon"></i> Change Password
+                        </h2>
+                        <i class="ri-arrow-down-s-line ts-caret-pw" style="font-size:1.3rem;color:var(--ts-text-muted)"></i>
+                    </button>
+                    <div id="pwSection" class="d-none mt-3">
+                        <div class="ts-alert ts-alert-info mb-3"><i class="ri-information-fill me-1"></i> Leave blank to keep your current password.</div>
+                        <div class="row g-3">
+                            <div class="col-12"><label class="ts-label">Current Password</label><input type="password" name="current_password" class="ts-input" placeholder="Enter current password"></div>
+                            <div class="col-12"><label class="ts-label">New Password</label><input type="password" name="new_password" class="ts-input" placeholder="Min. 8 characters" minlength="8"></div>
+                        </div>
                     </div>
                 </div>
 
                 <button type="submit" class="ts-btn-primary" style="border-radius:8px;padding:12px 30px">
-                    <span class="material-icons me-2">save</span>Save Changes
+                    <i class="ri-save-3-fill me-2"></i>Save Changes
                 </button>
             </form>
         </div>

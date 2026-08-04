@@ -59,7 +59,7 @@ include __DIR__ . '/../includes/alerts.php';
                 <span class="material-icons ts-section-icon">dashboard</span>
                 Dashboard
             </h1>
-            <p class="text-secondary-ts mb-0">Welcome back, <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></p>
+            <p style="color:var(--ts-text-secondary);margin-bottom:0">Welcome back, <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></p>
         </div>
         <a href="<?= SITE_URL ?>/developer/publish.php" class="ts-btn-primary">
             <span class="material-icons me-2">upload</span>Publish New App
