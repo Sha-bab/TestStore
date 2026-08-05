@@ -41,7 +41,7 @@ $apps = $stmt->fetchAll();
 
 $catIcons = [
     'Games'=>'ri-gamepad-fill','Tools'=>'ri-tools-fill','Social'=>'ri-group-fill',
-    'Entertainment'=>'ri-film-fill','Education'=>'ri-book-open-fill','Productivity'=>'ri-lightning-fill',
+    'Entertainment'=>'ri-film-fill','Education'=>'ri-book-open-fill','Productivity'=>'ri-flashlight-fill',
     'Finance'=>'ri-coins-fill','Health'=>'ri-heart-pulse-fill','Photography'=>'ri-camera-fill','Music'=>'ri-music-2-fill',
 ];
 $catIcon = $catIcons[$cat] ?? 'ri-apps-2-fill';

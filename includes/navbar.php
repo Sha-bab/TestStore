@@ -108,9 +108,15 @@ function navAvatarUrl(?string $avatar, bool $isDev = false): string {
                         <i class="ri-arrow-down-s-fill ts-caret" style="font-size:.85rem"></i>
                     </a>
                     <ul class="ts-dd-menu ts-dd-left">
-                        <?php foreach (['Games','Tools','Social','Entertainment','Education','Productivity','Finance','Health','Photography','Music'] as $navCat): ?>
+                        <?php 
+                        $navCatIcons = [
+                            'Games'=>'ri-gamepad-fill','Tools'=>'ri-tools-fill','Social'=>'ri-group-fill',
+                            'Entertainment'=>'ri-film-fill','Education'=>'ri-book-open-fill','Productivity'=>'ri-flashlight-fill',
+                            'Finance'=>'ri-coins-fill','Health'=>'ri-heart-pulse-fill','Photography'=>'ri-camera-fill','Music'=>'ri-music-2-fill',
+                        ];
+                        foreach ($navCatIcons as $navCat => $navIcon): ?>
                         <li><a href="<?= SITE_URL ?>/category.php?cat=<?= urlencode($navCat) ?>">
-                            <?= htmlspecialchars($navCat) ?>
+                            <i class="<?= $navIcon ?> me-2"></i><?= htmlspecialchars($navCat) ?>
                         </a></li>
                         <?php endforeach; ?>
                     </ul>
