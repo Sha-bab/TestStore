@@ -1886,7 +1886,7 @@ body:has(.ts-admin-layout) {
 /* ── Top bar ── */
 .ts-admin-topbar {
     height: var(--ts-topbar-h);
-    background: var(--ts-bg-secondary);
+    background: #ffffff;
     border-bottom: 1px solid var(--ts-border);
     display: flex;
     align-items: center;
@@ -1895,6 +1895,7 @@ body:has(.ts-admin-layout) {
     top: 0;
     z-index: 90;
     flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 /* ── Content padding area ── */
