@@ -32,14 +32,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $error = 'Invalid credentials or account blocked.';
             }
         } else {
-            $stmt = $db->prepare("SELECT * FROM developers WHERE email=? AND status='active' AND role='developer' LIMIT 1");
+            $stmt = $db->prepare("SELECT * FROM developers WHERE email=? AND status='active' AND role IN ('developer', 'admin') LIMIT 1");
             $stmt->execute([$email]);
             $dev = $stmt->fetch();
             if ($dev && password_verify($pass, $dev['password'])) {
                 $dev['avatar'] = $dev['profile_photo'] ?? null;
-                loginUser($dev, 'developer');
-                setFlash('success', 'Welcome back, ' . $dev['username'] . '!');
-                header('Location: ' . SITE_URL . '/developer/dashboard.php'); exit;
+                $userRole = $dev['role'] ?? 'developer';
+                loginUser($dev, $userRole);
+                if ($userRole === 'admin') {
+                    setFlash('success', 'Welcome, Administrator!');
+                    header('Location: ' . SITE_URL . '/admin/dashboard.php'); exit;
+                } else {
+                    setFlash('success', 'Welcome back, ' . $dev['username'] . '!');
+                    header('Location: ' . SITE_URL . '/developer/dashboard.php'); exit;
+                }
             } else {
                 $error = 'Invalid credentials or account blocked.';
             }

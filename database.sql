@@ -155,5 +155,5 @@ INSERT INTO `site_settings` (`setting_key`, `setting_value`, `description`) VALU
 -- Password: admin123  (CHANGE IMMEDIATELY after setup)
 INSERT INTO `developers` (`username`, `email`, `password`, `role`, `status`, `developer_type`) VALUES
   ('admin', 'admin@teststore.com',
-   '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+   '$2y$10$nt/s/oor5eOXjJgRdtnFmefiUIV4wJmbxrJqG3yfA6vKCdSpEg1Wq',
    'admin', 'active', 'company');
