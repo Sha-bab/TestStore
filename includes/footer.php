@@ -8,7 +8,7 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
             <!-- Brand column -->
             <div class="col-lg-4">
                 <a class="ts-brand d-inline-flex align-items-center gap-2 mb-3 text-decoration-none" href="<?= SITE_URL ?>/index.php">
-                    <i class="ri-store-2-fill ts-brand-icon"></i>
+                    <img src="<?= SITE_URL ?>/assets/images/logo.svg" alt="<?= htmlspecialchars($siteName) ?> Logo" width="32" height="32" style="filter:drop-shadow(0 0 6px rgba(16,185,129,0.4))">
                     <span class="ts-brand-text"><?= htmlspecialchars($siteName) ?></span>
                 </a>
                 <p class="ts-footer-desc">The premier destination for Android APK downloads. Safe, fast, and developer-friendly.</p>
