@@ -68,11 +68,11 @@ include __DIR__ . '/includes/alerts.php';
         <div class="row align-items-center">
             <div class="col-lg-8 fade-in-up">
                 <h1 class="ts-hero-title">
-                    Discover &amp; Download<br>
-                    The Best Android Apps
+                    Download  &amp; Test <br>
+                    Your Android Apps
                 </h1>
                 <p class="ts-hero-sub mt-3">
-                    Your trusted platform for safe, fast APK downloads.
+                    Your trusted platform for safe, fast Test and Download
                     Thousands of apps reviewed and approved by our team.
                 </p>
 
