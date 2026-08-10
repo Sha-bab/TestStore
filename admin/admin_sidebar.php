@@ -11,14 +11,14 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
             <img src="<?= SITE_URL ?>/assets/images/logo.svg" alt="Logo" width="32" height="32" style="filter:drop-shadow(0 0 5px rgba(16,185,129,0.35))">
             <div>
                 <div class="ts-brand-text" style="font-size:1rem"><?= htmlspecialchars($siteName) ?></div>
-                <div style="font-size:.65rem;color:var(--ts-text-muted);margin-top:-2px">Administration</div>
+                <div style="font-size:.65rem;color:#000000;margin-top:-2px">Administration</div>
             </div>
         </a>
     </div>
     <nav class="ts-sidebar-nav">
         <div class="ts-sidebar-section">Overview</div>
         <a href="<?= SITE_URL ?>/admin/dashboard.php" class="ts-sidebar-link <?= $activeMenu==='dashboard'?'active':'' ?>">
-            <i class="ri-dashboard-3-fill"></i>Dashboard
+            <i class="ri-dashboard-3-fill;"></i>Dashboard
         </a>
 
         <div class="ts-sidebar-section">Content</div>
