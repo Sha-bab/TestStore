@@ -538,9 +538,12 @@ img {
     background: transparent !important;
 }
 
-.ts-dropdown-item:hover {
-    background: var(--ts-bg-glass) !important;
-    color: var(--ts-text-primary) !important;
+/*category dropdown hover effect */
+.ts-dropdown-item:hover,
+.dropdown-item:hover {
+    background: #f7c19b !important;
+    color: #9a3412 !important;
+    font-weight: 600;
 }
 
 /* Ensure dropdown divider is visible */
@@ -799,7 +802,7 @@ img {
     align-items: center;
 }
 
-.ts-hero::before {
+/* .ts-hero::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -808,7 +811,7 @@ img {
             rgba(6, 20, 15, 0.65) 45%,
             rgba(6, 20, 15, 0.20) 100%);
     pointer-events: none;
-}
+} */
 
 .ts-hero-title {
     font-size: clamp(2.2rem, 5vw, 3.6rem);
