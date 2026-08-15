@@ -958,17 +958,7 @@ img {
 }
 
 .ts-cat-pill::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.28) 0%, rgba(5, 150, 105, 0.12) 50%, transparent 85%);
-    opacity: 0;
-    transition: opacity var(--ts-dur) var(--ts-ease);
-}
-
-.ts-cat-pill:hover::before,
-.ts-cat-pill.active::before {
-    opacity: 1;
+    display: none;
 }
 
 .ts-cat-pill-icon {
@@ -976,7 +966,7 @@ img {
     height: 52px;
     border-radius: 14px;
     background: linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(13, 148, 136, 0.1));
-    border: 1px solid rgba(5, 150, 105, 0.2);
+    border: 1px solid rgba(5, 150, 105, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1001,8 +991,8 @@ img {
 
 .ts-cat-pill:hover,
 .ts-cat-pill.active {
-    border-color: var(--ts-border-accent);
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.35), 0 0 40px rgba(16, 185, 129, 0.15), var(--ts-shadow-card);
+    border-color: var(--ts-primary);
+    box-shadow: 0 0 10px rgba(5, 150, 105, 0.5), inset 0 0 0 1px rgba(5, 150, 105, 0.3);
     transform: translateY(-4px);
     background: var(--ts-bg-card-hover);
 }
@@ -1010,8 +1000,8 @@ img {
 .ts-cat-pill:hover .ts-cat-pill-icon,
 .ts-cat-pill.active .ts-cat-pill-icon {
     background: linear-gradient(135deg, var(--ts-primary), var(--ts-accent));
-    border-color: transparent;
-    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
+    border-color: var(--ts-primary);
+    box-shadow: 0 0 8px rgba(5, 150, 105, 0.4);
 }
 
 .ts-cat-pill:hover .ts-cat-pill-icon i,
