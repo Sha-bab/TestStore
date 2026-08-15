@@ -47,8 +47,8 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
             <p class="ts-footer-copy mb-0">
                 &copy; <?= date('Y') ?> <?= htmlspecialchars($siteName) ?>. <b>All rights reserved.</b>
             </p>
-              <p class="ts-footer-copy mb-0">
-                Developed By Muhammad Shabab Sayem
+            <p class="ts-footer-copy mb-0">
+                <b> Developed By Muhammad Shabab Sayem </b>
             </p>
         </div>
     </div>
