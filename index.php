@@ -79,7 +79,7 @@ include __DIR__ . '/includes/alerts.php';
                 <!-- Hero Search -->
                 <form action="<?= SITE_URL ?>/search.php" method="GET">
                     <div class="ts-hero-search-wrap">
-                        <i class="ri-search-2-line" style="color:var(--ts-text-muted);margin-right:6px;font-size:1.1rem"></i>
+                        <i class="ri-search-2-line" style="color:#059669;margin-right:8px;font-size:1.2rem"></i>
                         <input class="ts-hero-search" type="search" name="q"
                                placeholder="Search apps, games, tools…" autocomplete="off">
                         <button type="submit" class="ts-hero-search-btn">Search</button>
