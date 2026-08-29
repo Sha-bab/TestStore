@@ -106,7 +106,11 @@ include __DIR__ . '/includes/alerts.php';
     </div>
 </section>
 
-<main class="container-xl py-5">
+<!-- ── Physics Background Canvas ────────────────────────────── -->
+<div class="ts-physics-bg" id="tsPhysicsBg">
+    <canvas id="tsPhysicsCanvas"></canvas>
+
+    <main class="container-xl py-5" style="position:relative;z-index:1">
 
     <!-- ── Category Strip ─────────────────────────────────── -->
     <section class="mb-5 fade-in-up" style="animation-delay:.1s">
@@ -225,6 +229,11 @@ include __DIR__ . '/includes/alerts.php';
     </section>
     <?php endif; ?>
 
-</main>
+    </main>
 
-<?php include __DIR__ . '/includes/footer.php'; ?>
+</div><!-- /.ts-physics-bg -->
+
+<?php
+$extraJS = '<script src="' . SITE_URL . '/assets/js/physics-bg.js?v=' . filemtime(__DIR__ . '/assets/js/physics-bg.js') . '"></script>';
+include __DIR__ . '/includes/footer.php';
+?>
