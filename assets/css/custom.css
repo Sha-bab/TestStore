@@ -10,9 +10,9 @@
     /* Colors — Light Sage Green */
     --ts-bg-primary: #f0f7f2;
     --ts-bg-secondary: #b8dac3;
-    --ts-bg-card: rgba(255, 255, 255, 0.85);
-    --ts-bg-card-hover: rgba(255, 255, 255, 0.98);
-    --ts-bg-glass: rgba(255, 255, 255, 0.55);
+    --ts-bg-card: #ffffff;
+    --ts-bg-card-hover: #ffffff;
+    --ts-bg-glass: rgba(255, 255, 255, 0.92);
     --ts-border: rgba(16, 185, 129, 0.15);
     --ts-border-accent: rgba(16, 185, 129, 0.45);
 

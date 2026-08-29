@@ -255,8 +255,8 @@
   let icons     = [];
 
   function initParticles() {
-    const count     = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 60);
-    const iconCount = Math.min(Math.floor(canvas.width / 150), 10);
+    const count     = Math.min(Math.floor((canvas.width * canvas.height) / 5000), 120);
+    const iconCount = Math.min(Math.floor(canvas.width / 90), 18);
     particles = Array.from({ length: count }, () => new Particle());
     icons     = Array.from({ length: iconCount }, () => new IconParticle());
   }
