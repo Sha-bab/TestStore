@@ -78,19 +78,61 @@ $countries = ['Afghanistan','Albania','Algeria','Argentina','Australia','Austria
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your <?= SITE_NAME ?> account">
     <title><?= $pageTitle ?> — <?= SITE_NAME ?></title>
+
+    <!-- Fonts: Poppins + Playfair Display — site-wide -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/custom.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+
+    <!-- Project CSS -->
+    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/custom.css?v=<?= filemtime(__DIR__ . '/../assets/css/custom.css') ?>">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="<?= SITE_URL ?>/assets/images/favicon.svg?v=<?= filemtime(__DIR__ . '/../assets/images/favicon.svg') ?>">
+
+    <style>
+        html, body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Override custom.css .ts-auth-wrap background */
+        .ts-auth-wrap {
+            padding: 48px 16px !important;
+            background: radial-gradient(circle at 78% 15%, #155e47 0, transparent 28%),
+                        linear-gradient(135deg, #062a20, #0d563e) !important;
+        }
+        .ts-auth-wrap::before {
+            background: none !important; /* Remove the default purple/cyan overlay */
+        }
+        .ts-auth-card {
+            border: 1px solid rgba(52, 211, 153, 0.15) !important;
+            box-shadow: 0 24px 60px rgba(1, 25, 18, 0.5) !important;
+            border-radius: 22px !important;
+        }
+        .ts-auth-title {
+            font-family: 'Playfair Display', serif !important;
+            font-weight: 700 !important;
+        }
+        .ts-tab-btn {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 <body>
 <div class="ts-auth-wrap" style="padding:60px 16px">
     <div class="ts-auth-card" style="max-width:520px">
         <div class="ts-auth-logo">
             <a href="<?= SITE_URL ?>/index.php" class="ts-brand d-inline-flex align-items-center gap-2">
-                <img src="<?= SITE_URL ?>/assets/images/logo.svg" alt="Logo" width="30" height="30" style="filter:drop-shadow(0 0 6px rgba(16,185,129,0.4))">
+                <img src="<?= SITE_URL ?>/assets/images/favicon.svg?v=<?= filemtime(__DIR__ . '/../assets/images/favicon.svg') ?>" alt="Logo" width="30" height="30" style="filter:drop-shadow(0 0 6px rgba(16,185,129,0.45))">
                 <span class="ts-brand-text"><?= SITE_NAME ?></span>
             </a>
         </div>
@@ -100,16 +142,16 @@ $countries = ['Afghanistan','Albania','Algeria','Argentina','Australia','Austria
         <!-- Tab toggle -->
         <div class="ts-tab-toggle">
             <button type="button" class="ts-tab-btn <?= $tab==='user'?'active':'' ?>" onclick="switchTab(event,'user')">
-                <span class="material-icons me-1" style="font-size:.9rem">person</span>User
+                <i class="ri-user-line me-1"></i>User
             </button>
             <button type="button" class="ts-tab-btn <?= $tab==='developer'?'active':'' ?>" onclick="switchTab(event,'developer')">
-                <span class="material-icons me-1" style="font-size:.9rem">code</span>Developer
+                <i class="ri-code-s-slash-line me-1"></i>Developer
             </button>
         </div>
 
         <?php if (!empty($errors)): ?>
         <div class="ts-alert ts-alert-danger mb-3 fade-in">
-            <span class="material-icons">error</span>
+            <i class="ri-error-warning-fill"></i>
             <ul class="mb-0 ps-3" style="font-size:.85rem">
                 <?php foreach ($errors as $e): ?><li><?= htmlspecialchars($e) ?></li><?php endforeach; ?>
             </ul>
@@ -183,8 +225,8 @@ $countries = ['Afghanistan','Albania','Algeria','Argentina','Australia','Austria
                 </div>
             </div>
 
-            <button type="submit" class="ts-btn-primary w-100 mt-2" style="border-radius:8px;justify-content:center;padding:13px">
-                <span class="material-icons me-2">person_add</span>
+            <button type="submit" class="ts-btn-primary w-100 mt-2" style="border-radius:8px;justify-content:center;padding:13px;font-family:'Poppins',sans-serif">
+                <i class="ri-user-add-line me-2"></i>
                 <span id="regBtnText"><?= $tab==='developer' ? 'Create Developer Account' : 'Create Account' ?></span>
             </button>
         </form>
@@ -203,10 +245,9 @@ function switchTab(event, tab) {
     document.getElementById('devFields').style.display = tab === 'developer' ? 'block' : 'none';
     document.getElementById('regBtnText').textContent = tab === 'developer' ? 'Create Developer Account' : 'Create Account';
     document.querySelectorAll('.ts-tab-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
+    event.target.closest('.ts-tab-btn').classList.add('active');
 }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
 <script src="<?= SITE_URL ?>/assets/js/main.js"></script>
 </body>
 </html>

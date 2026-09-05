@@ -81,8 +81,8 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             display: grid;
             place-items: center;
             padding: 32px 20px;
-            background: radial-gradient(ellipse at 70% 20%, #b2c9b0 0%, transparent 50%),
-                        linear-gradient(145deg, #8aac8a 0%, #a8bfa6 35%, #c5d8c1 70%, #ddebd8 100%);
+            background: radial-gradient(circle at 78% 15%, #155e47 0, transparent 28%),
+                        linear-gradient(135deg, #062a20, #0d563e);
             font-family: 'Poppins', sans-serif;
             flex-direction: unset; /* override global flex-direction:column */
         }
@@ -108,8 +108,8 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             justify-content: space-between;
             overflow: hidden;
             padding: 50px 44px;
-            color: #fff;
-            background: linear-gradient(148deg, rgba(10, 65, 48, 0.96), rgba(3, 43, 32, 0.99));
+            color: #2d4a2d;
+            background: linear-gradient(148deg, #c8dcc5 0%, #b0c9ac 40%, #97b894 100%);
         }
 
         .welcome-panel::before,
@@ -118,21 +118,21 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             position: absolute;
             width: 280px;
             height: 280px;
-            border: 34px solid rgba(52, 211, 153, 0.18);
+            border: 34px solid rgba(255, 255, 255, 0.28);
             transform: rotate(45deg);
             pointer-events: none;
         }
         .welcome-panel::before { top: -155px; left: -75px; }
-        .welcome-panel::after  { right: -160px; bottom: -115px; border-color: rgba(52, 211, 153, 0.12); }
+        .welcome-panel::after  { right: -160px; bottom: -115px; border-color: rgba(255, 255, 255, 0.16); }
 
         .panel-lines {
             position: absolute;
             inset: 0;
-            opacity: 0.3;
+            opacity: 0.45;
             background: repeating-linear-gradient(
                 135deg,
                 transparent 0 76px,
-                rgba(52, 211, 153, 0.14) 77px 80px,
+                rgba(255, 255, 255, 0.22) 77px 80px,
                 transparent 81px 148px
             );
             pointer-events: none;
@@ -145,7 +145,7 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            color: #fff;
+            color: #2d4a2d;
             text-decoration: none;
         }
         .panel-brand-mark {
@@ -153,12 +153,12 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             height: 38px;
             display: grid;
             place-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.38);
+            border: 1px solid rgba(255, 255, 255, 0.55);
             border-radius: 11px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.35);
             flex-shrink: 0;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 14px rgba(80, 120, 80, 0.2);
         }
         .panel-brand-mark img {
             width: 24px;
@@ -170,7 +170,7 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             font-size: 1.2rem;
             font-weight: 800;
             letter-spacing: 1px;
-            color: #fff;
+            color: #2d4a2d;
         }
 
         /* Copy block */
@@ -181,12 +181,12 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 3.8vw, 3.1rem);
             line-height: 1.07;
-            color: #fff;
+            color: #1e3a1e;
         }
         .panel-copy p {
             max-width: 280px;
             margin: 0;
-            color: rgba(255, 255, 255, 0.72);
+            color: rgba(30, 58, 30, 0.72);
             font-size: 0.94rem;
             line-height: 1.72;
         }
@@ -199,13 +199,14 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
             gap: 12px;
             width: 100%;
             padding: 13px 16px;
-            border: 1px solid rgba(52, 211, 153, 0.22);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 13px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
+            background: rgba(255, 255, 255, 0.28);
+            color: #2d4a2d;
             font-size: 0.88rem;
+            backdrop-filter: blur(4px);
         }
-        .panel-pill i { font-size: 1.1rem; color: #6ee7b7; flex-shrink: 0; }
+        .panel-pill i { font-size: 1.1rem; color: #3d7a4a; flex-shrink: 0; }
 
         /* ── Right Form Panel ───────────────────────────── */
         .form-panel {
@@ -401,16 +402,33 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
         }
         .auth-footer-links a:hover { opacity: 0.75; }
 
+        /* Admin link — visually hidden, keyboard-accessible easter egg */
         .admin-link {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .admin-link.revealed {
+            position: static;
+            width: auto;
+            height: auto;
+            clip: auto;
+            pointer-events: auto;
+            opacity: 1;
             display: block;
-            margin-top: 12px;
+            margin-top: 10px;
             text-align: center;
             font-size: 0.78rem;
             color: var(--ts-text-muted);
             text-decoration: none;
-            transition: color 0.2s;
         }
-        .admin-link:hover { color: var(--ts-primary); }
+        .admin-link.revealed:hover { color: var(--ts-primary); }
 
         /* ── Responsive ─────────────────────────────────── */
         @media (max-width: 780px) {
@@ -554,12 +572,12 @@ $metaDesc  = 'Sign in to your ' . SITE_NAME . ' account';
         <div class="auth-divider">New to <?= htmlspecialchars(SITE_NAME) ?>?</div>
 
         <p class="auth-footer-links">
-            Create an account and get started. <br>
             <a href="<?= SITE_URL ?>/auth/register.php">Create your account</a>
         </p>
 
-        <a class="admin-link" href="<?= SITE_URL ?>/admin/login.php">
-            <i class="ri-shield-user-line"></i> Administrator login →
+        <!-- Admin link: hidden, revealed by pressing Shift+A five times -->
+        <a class="admin-link" id="adminLink" href="<?= SITE_URL ?>/admin/login.php" tabindex="-1" aria-hidden="true">
+            <i class="ri-shield-user-line"></i> Administrator login
         </a>
 
     </section>
@@ -586,6 +604,27 @@ function togglePass() {
     input.type = isPass ? 'text' : 'password';
     icon.className = isPass ? 'ri-eye-off-line' : 'ri-eye-line';
 }
+
+// Secret admin link: press Shift+A five times to reveal
+(function () {
+    var seq = 0, timer;
+    document.addEventListener('keydown', function (e) {
+        if (e.shiftKey && e.key === 'A') {
+            seq++;
+            clearTimeout(timer);
+            timer = setTimeout(function () { seq = 0; }, 2000);
+            if (seq >= 5) {
+                seq = 0;
+                var link = document.getElementById('adminLink');
+                if (link) {
+                    link.classList.add('revealed');
+                    link.removeAttribute('tabindex');
+                    link.removeAttribute('aria-hidden');
+                }
+            }
+        }
+    });
+})();
 
 // Loading state on submit
 document.getElementById('loginForm').addEventListener('submit', function () {
