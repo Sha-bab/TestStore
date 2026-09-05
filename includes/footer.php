@@ -13,9 +13,9 @@ $siteName = defined('SITE_NAME') ? SITE_NAME : 'TEST STORE';
                 </a>
                 <p class="ts-footer-desc">The premier destination for Android APK downloads. Safe, fast, and developer-friendly.</p>
                 <div class="ts-social-links d-flex gap-2 mt-3">
-                    <a href="#" class="ts-social-btn" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
-                    <a href="#" class="ts-social-btn" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
-                    <a href="#" class="ts-social-btn" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61578976993010" class="ts-social-btn" aria-label="Facebook"><i class="ri-facebook-box-fill"></i></a>
+                    <a href="https://www.instagram.com/itsnotsabab/" class="ts-social-btn" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="https://github.com/Sha-bab" class="ts-social-btn" aria-label="GitHub"><i class="ri-github-fill"></i></a>
                 </div>
             </div>
 
